@@ -1,7 +1,7 @@
 # 2024-1-Squad12
 
 # Saúde Goiás
--Saúde Goiás é um projeto da disciplina de MDS (Métodos de Desenvolvimento de Software) onde buscamos extrair dados do diário oficial do estado de Goiás sobre os maiores investimentos na área da saúde separado por municípios e exibir de forma amigável em um site.
+- Saúde Goiás é um projeto da disciplina de MDS (Métodos de Desenvolvimento de Software) onde neste projeto buscamos extrair dados do diário oficial do estado de Goiás sobre os maiores investimentos na área da saúde separado por municípios e exibir de forma amigável em um site.
 
 ## Contribuidores
 
