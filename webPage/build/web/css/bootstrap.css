@@ -6278,3 +6278,15 @@ button.close {
     display: none !important;
   }
 }
+
+.bg-white {
+    --tw-bg-opacity: 1;
+    background-color: #000 \9;
+}
+.p-9 {
+    padding: 2.25rem;
+}
+
+.rounded-3xl {
+    border-radius: 1.5rem;
+}
