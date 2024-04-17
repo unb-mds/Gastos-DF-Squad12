@@ -6283,8 +6283,14 @@ button.close {
     --tw-bg-opacity: 1;
     background-color: #000 \9;
 }
-.p-9 {
+.p-1 {
     padding: 2.25rem;
+    text-align: justify;
+}
+
+.p-2 {
+    padding: 2.25rem;
+    text-align: center;
 }
 
 .rounded-3xl {
