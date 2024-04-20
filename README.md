@@ -3,6 +3,7 @@
 # Saúde Goiás
 - Saúde Goiás é um projeto da disciplina de MDS (Métodos de Desenvolvimento de Software) onde neste projeto buscamos extrair dados do diário oficial do estado de Goiás sobre os maiores investimentos na área da saúde separado por municípios e exibir de forma amigável em um site.
 - Nosso projeto pode ser visitado nesse link! (https://unb-mds.github.io/Saude-Goias-Squad12/)
+- O Figma de nosso projeto pode ser visitado nesse link! (https://www.figma.com/file/XibXeRjq94F1OFKASoOSwN/MDS--SA%C3%9ADE-GO?type=design&node-id=0%3A1&mode=design&t=ARUrDIpP6e777Dg0-1)
 
 ## Contribuidores
 
