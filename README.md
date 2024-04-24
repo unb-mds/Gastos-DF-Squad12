@@ -22,9 +22,9 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 - Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
 - Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
 
-## 🚀 Instalando <nome_do_projeto>
+## 🚀 Execução do ambiente
 
-Para instalar o <nome_do_projeto>, siga estas etapas:
+Siga estas etapas:
 
 Linux e macOS:
 
@@ -38,31 +38,33 @@ Windows:
 <comando_de_instalação>
 ```
 
-## ☕ Usando <nome_do_projeto>
+## ☕ Usando SAÚDEGO
 
-Para usar <nome_do_projeto>, siga estas etapas:
+Para usar o sistema saúdego, siga estas etapas:
 
 ```
 <exemplo_de_uso>
 ```
 
-Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Fornece uma referência de opções para pontos de bônus!
+## 📚 Documentação
 
-## 📫 Contribuindo para <nome_do_projeto>
+A documentação do projeto pode ser encontrada <a href="https://suagradeunb.com.br">clicando aqui</a>
 
-Para contribuir com <nome_do_projeto>, siga estas etapas:
+📎 Extra
 
-1. Bifurque este repositório.
-2. Crie um branch: `git checkout -b <nome_branch>`.
-3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
-4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
-5. Crie a solicitação de pull.
+Stoy Map, Activity Flow,
 
-Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+- Para acessar o Story Map, Activity Flow, Jornadas do usuário <a href="https://www.google.com">clique aqui</a>
+
+Arquitetura
+
+- Para acessar a arquitetura <a href="https://www.google.com">clique aqui</a>
+
+Protótipo
+
+- Para acessar o protótipo <a href="https://www.google.com">clique aqui</a>
 
 ## 🤝 Colaboradores
-
-Agradecemos às seguintes pessoas que contribuíram para o desenvolvimento do projeto projeto:
 
 <center>
 <table style="margin-left: auto; margin-right: auto;">
