@@ -8,8 +8,6 @@
 
 <img src="logo.png" alt="logo aqui">
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
-
 ## Sobre
 
 - Saúde Goiás é um projeto da disciplina de MDS (Métodos de Desenvolvimento de Software) onde neste projeto buscamos extrair dados do diário oficial do estado de Goiás sobre os maiores investimentos na área da saúde separado por municípios e exibir de forma amigável em um site.
