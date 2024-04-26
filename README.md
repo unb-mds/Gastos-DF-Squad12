@@ -54,7 +54,7 @@ A documentação do projeto pode ser encontrada <a href="https://suagradeunb.com
 
 Stoy Map, Activity Flow,
 
-- Para acessar o Story Map, Activity Flow, Jornadas do usuário <a href="https://www.google.com">clique aqui</a>
+- Para acessar o Story Map, Activity Flow, Jornadas do usuário <a href="https://miro.com/app/board/uXjVKSnWUPs=/?share_link_id=11173740909">clique aqui</a>
 
 Arquitetura
 
