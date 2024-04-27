@@ -48,7 +48,7 @@ Para usar o sistema saúdego, siga estas etapas:
 
 ## 📚 Documentação
 
-A documentação do projeto pode ser encontrada <a href="https://suagradeunb.com.br">clicando aqui</a>
+A documentação do projeto pode ser encontrada <a href="https://unb-mds.github.io/Saude-DF-Squad12/">clicando aqui</a>
 
 📎 Extra
 
