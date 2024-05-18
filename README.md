@@ -14,6 +14,9 @@
 
 - Nosso projeto pode ser visitado nesse link! (https://unb-mds.github.io/Saude-Goias-Squad12/)
 
+## Figma
+- https://www.figma.com/design/DX6zxOHli2DK8STY6BKxXE/Untitled?node-id=0%3A1&t=oquXP5BaiRCdtG6b-1
+
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
