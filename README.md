@@ -9,14 +9,14 @@ Ter o pip 24.0 ou superior instalado.
 ### No windows
 
 Para ativar o ambiente virtual do python execulte:
-'''
+```
 .venv\Scripts\activate
-'''
+```
 
 Em seguida para abrir um servidor local e visualizar no seu navegador execulte:
-'''
+```
 mkdocs serve
-'''
+```
 
 Será aberto no endereço http://localhost:8000/
 
@@ -25,14 +25,14 @@ Mais informações sobre o ambiente virtal python podem ser encontrado em https:
 ### No linux (ubuntu)
 
 Para ativar o ambiente virtual do python execulte:
-'''
+```
 source venv/bin/activate
-'''
+```
 
 Em seguida para abrir um servidor local e visualizar no seu navegador execulte:
-'''
+```
 mkdocs serve
-'''
+```
 
 Será aberto no endereço http://localhost:8000/
 
