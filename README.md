@@ -20,6 +20,11 @@ mkdocs serve
 
 Será aberto no endereço http://localhost:8000/
 
+Caso tenha problemas para subir o servidor local execulte:
+```
+pip3 install --upgrade mkdocs mkdocs-material
+```
+
 Mais informações sobre o ambiente virtal python podem ser encontrado em https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
 
 ### No linux (ubuntu)
@@ -36,7 +41,11 @@ mkdocs serve
 
 Será aberto no endereço http://localhost:8000/
 
+Caso tenha problemas para subir o servidor local execulte:
+```
+pip3 install --upgrade mkdocs mkdocs-material
+```
+
 Mais informações sobre o ambiente virtal python podem ser encontrado em https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
 
 
-teste
