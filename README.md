@@ -10,7 +10,7 @@ Ter o pip 24.0 ou superior instalado.
 
 Para ativar o ambiente virtual do python execute:
 ```
-.venv\Scripts\activate
+venv\bin\activate
 ```
 
 Em seguida para abrir um servidor local e visualizar no seu navegador execute:
