@@ -2,6 +2,8 @@
 
 ## Pré-requisitos
 
+### No Windows
+
 Tentei. Não roda, ativa o WSL ou instala um ubuntu e segue os passos do linux 👍
 
 ### No linux (ubuntu)
