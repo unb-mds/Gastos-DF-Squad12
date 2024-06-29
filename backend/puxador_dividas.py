@@ -3,7 +3,7 @@ from pydantic import BaseModel
 import requests
 import re
 
-# Fazendo a solicitação GET para a API
+# Fazendo a solicitação GET para a API, neste caso de teste é de 29/05/2023 ate 29/05/2024
 response = requests.get(
     'https://queridodiario.ok.org.br/api/gazettes?territory_ids=5300108&published_since=2023-05-09&published_until=2024-05-29&querystring=RECONHECIMENTO%20DE%20D%C3%8DVIDA&excerpt_size=500&number_of_excerpts=100000&pre_tags=&post_tags=&size=1000&sort_by=descending_date')
 
