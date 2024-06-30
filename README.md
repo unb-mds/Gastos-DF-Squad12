@@ -1,6 +1,16 @@
 # Como rodar o ambiente da documentação
 
+## Algumas informações
+
+O deploy é feito altomaticamente e pode ser acompanhado na aba `actions` do git hub. O arquivo
+`index.md` é a página inicial da documentação para criar uma página nova apenas crie um arquivo `.md`
+na pasta `docs` a documentação toda é feita em `markdown` para mais detalhes visite a documentação.
+
 ## Pré-requisitos
+
+Ter o Python 3.12.3 ou superior instalado.
+
+Ter o pip 24.0 ou superior instalado.
 
 ### No Windows
 
