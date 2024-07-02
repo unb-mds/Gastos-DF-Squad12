@@ -3,11 +3,11 @@ hide:
   - navigation
 ---
 
-# SaúdeDF
+# Gastos DF
 
 ## Sobre
 
-SaúdeDF é um projeto em desenvolvimento da matéria **Métodos de Desenvolvimento de Software**, onde buscamos extrair dados do diário oficial do estado de Goiás sobre os maiores investimentos na área da saúde separado por municípios e exibir de forma amigável em um site.
+Gastos DF é um projeto em desenvolvimento da matéria **Métodos de Desenvolvimento de Software**, onde buscamos extrair dados do diário oficial do estado do Distrito Federal sobre os maiores investimentos do governo,separando por municípios e exibindo de forma amigável em um site.
 
 ## Equipe
 
