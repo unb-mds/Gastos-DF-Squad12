@@ -1,4 +1,4 @@
-site_name: Saúde Goiás
+site_name: Gastos DF
 theme:
   name: material
   features:
@@ -19,7 +19,6 @@ theme:
         name: Switch to light mode
       primary: teal
       accent: purple
-      
     - scheme: default 
       toggle:
         icon: material/weather-sunny
