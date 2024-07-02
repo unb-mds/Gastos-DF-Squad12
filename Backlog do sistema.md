@@ -1,11 +1,10 @@
 
-![Saúde Goiás drawio (1)](https://github.com/unb-mds/Saude-Goias-Squad12/assets/73038704/14fdac91-68d4-4054-8132-1d231555ac24)
+![Gastos DF drawio (1)](https://github.com/unb-mds/Saude-Goias-Squad12/assets/73038704/14fdac91-68d4-4054-8132-1d231555ac24)
 
-## Backlog do Projeto Saúde Goiás
+## Backlog do Projeto Gastos DF
 
-**Projeto:** SAÚDE GOIÁS
-
-**Objetivo:** Criar um sistema web para gerenciamento e visualização de dados de saúde do estado de Goiás.
+**Projeto:** GASTOS DF
+**Objetivo:** Criar um sistema web para gerenciamento e visualização de dados dos gastos do Distrito Federal.
 
 **Prioridade:**
 
