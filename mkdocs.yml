@@ -15,14 +15,14 @@ theme:
   palette:
     - scheme: slate
       toggle:
-        icon: material/weather-sunny 
-        name: Switch to dark mode
+        icon: material/weather-night 
+        name: Switch to light mode
       primary: teal
       accent: purple
       
     - scheme: default 
       toggle:
-        icon: material/weather-night
-        name: Switch to light mode    
+        icon: material/weather-sunny
+        name: Switch to dark mode   
       primary: teal
       accent: lime
