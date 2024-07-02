@@ -1,4 +1,4 @@
-# SAÚDEDF
+# GASTOSDF
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
@@ -9,8 +9,8 @@
 <img src=".jpeg" alt="logo aqui">
 
 ## Sobre
-
-- Saúde Goiás é um projeto da disciplina de MDS (Métodos de Desenvolvimento de Software) onde neste projeto buscamos extrair dados do diário oficial do estado de Goiás sobre os maiores investimentos na área da saúde separado por municípios e exibir de forma amigável em um site.
+ 
+- Gastos DF é um projeto da disciplina de MDS (Métodos de Desenvolvimento de Software) onde neste projeto buscamos extrair dados do diário oficial do Distrito Federal sobre os maiores gastos do governo distrital separado por tipos e exibir de forma amigável em um site.
 
 - Nosso projeto pode ser visitado nesse link! (https://unb-mds.github.io/Saude-Goias-Squad12/)
 
@@ -38,9 +38,9 @@ Windows:
 <comando_de_instalação>
 ```
 
-## ☕ Usando SAÚDEGO
+## ☕ Usando GASTOS DF
 
-Para usar o sistema saúdego, siga estas etapas:
+Para usar o sistema gastosdf, siga estas etapas:
 
 ```
 <exemplo_de_uso>
