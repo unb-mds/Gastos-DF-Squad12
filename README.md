@@ -82,13 +82,6 @@ Protótipo
             </a>
         </td>
         <td align="center">
-            <a href="https://github.com/FelipeFreire-gf">
-                <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/62055315?v=4" width="150px;"/>
-                <h5 class="text-center">Felipe Freire</h5>
-            </a>
-        </td>
-        </td>
-        <td align="center">
             <a href="https://github.com/DanNunes777">
                 <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/101228207?v=4" width="150px;"/>
                 <h5 class="text-center">Daniel Nunes</h5>
