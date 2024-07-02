@@ -38,3 +38,4 @@ pip3 install --upgrade mkdocs mkdocs-material
 Mais informações sobre o ambiente virtal python podem ser encontrado em https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
 
 
+teste teste aaaaaa para deploy novo aaaaa
