@@ -48,7 +48,7 @@ Para usar o sistema gastosdf, siga estas etapas:
 
 ## 📚 Documentação
 
-A documentação do projeto pode ser encontrada <a href="https://github.com/unb-mds/Gastos-DF-Squad12/">clicando aqui</a>
+A documentação do projeto pode ser encontrada <a href="https://unb-mds.github.io/Saude-DF-Squad12/">clicando aqui</a>
 
 📎 Extra
 
