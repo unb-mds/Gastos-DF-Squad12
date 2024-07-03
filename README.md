@@ -12,7 +12,7 @@
  
 - Gastos DF é um projeto da disciplina de MDS (Métodos de Desenvolvimento de Software) onde neste projeto buscamos extrair dados do diário oficial do Distrito Federal sobre os maiores gastos do governo distrital separado por tipos e exibir de forma amigável em um site.
 
-- Nosso projeto pode ser visitado nesse link! (https://unb-mds.github.io/Saude-Goias-Squad12/)
+- Nosso projeto pode ser visitado nesse link! (https://github.com/unb-mds/Gastos-DF-Squad12/)
 
 ## 💻 Pré-requisitos
 
