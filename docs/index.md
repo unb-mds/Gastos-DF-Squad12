@@ -1,29 +1,6 @@
 # Página Inicial
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Gastos DF é um projeto em desenvolvimento na disciplina de Métodos de Desenvolvimento de Software. Nele, estamos focados em extrair informações do Diário Oficial do Distrito Federal sobre os principais investimentos do governo, segmentando esses dados por municípios e apresentando de maneira acessível ao publico em um site de simples e fácil navegação.
 
 
 ## Colaboradores
