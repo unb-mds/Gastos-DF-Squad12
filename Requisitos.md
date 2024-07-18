@@ -2,25 +2,25 @@
 
 ### 1. Identificação do Projeto
 
-**Nome do projeto:** Saúde Goiás
+**Nome do projeto:** Gastos DF
 
 ### 2. Descrição do Projeto
 
-**Objetivo do projeto:** Facilitar o acesso à informação sobre saúde pública no estado de Goiás.
+**Objetivo do projeto:** Facilitar o acesso à informação sobre os gastos de variadas secretarías em todo o DF.
 
-**Visão geral do projeto:** Uma aplicação web que apresenta dados de saúde da região de Goiás de forma gráfica e intuitiva.
+**Visão geral do projeto:** Uma aplicação web que apresenta dados dos gastos pré selecionados do DF de forma gráfica e intuitiva.
 
 **Funcionalidades principais:**
 
-* Visualização de dados de saúde em gráficos e tabelas.
-* Filtros para refinar a pesquisa por município, indicador de saúde, período, etc.
+* Visualização de dados de gasto em gráficos e tabelas.
+* Filtros para refinar a pesquisa por secretaria, indicadores de dados e por período, etc.
 * Interface amigável e acessível para diferentes públicos.
 
 **Público-alvo:**
 
-* Estudiosos e pesquisadores da área da saúde.
+* Estudiosos,pesquisadores e cidadões curiosos sobre as rendas e gastos de Brasília.
 * Gestores públicos e tomadores de decisão.
-* População em geral interessada em saúde pública.
+* População em geral interessada em como está sendo remanejado o seu dinheiro público.
 
 ### 3. Requisitos Funcionais
 
@@ -32,28 +32,19 @@
 
 * A tabela deve ser organizada por colunas, com títulos claros e concisos.
 * A tabela deve ser responsiva, adaptando-se automaticamente a diferentes tamanhos de tela.
-* Os usuários devem poder filtrar os dados por município, indicador de saúde, período, etc.
+* Os usuários devem poder filtrar os dados por secretarias, indicadores, período, etc.
 
-
-**Exemplo de tabela:**
-
-| Município | Indicador de saúde | Período | Valor | Fonte dos dados |
-|---|---|---|---|---|
-| Goiânia | Esperança de vida ao nascer | 2020 | 77,5 anos | IBGE |
-| Aparecida de Goiânia | Mortalidade infantil | 2020 | 12,5 por mil nascidos vivos | SES-GO |
-| Anápolis | Taxa de internação por doenças respiratórias | 2020 | 100 por 100 mil habitantes | DATASUS |
 
 **Observações:**
 
-* A tabela acima é apenas um exemplo. Os dados reais podem variar.
 * A tabela deve ser customizada de acordo com as necessidades do projeto.
 
 **Funcionalidades adicionais (podem ser adicionadas no decorrer do projeto):**
 
 * Gráficos e mapas interativos para visualizar os dados de forma mais intuitiva.
-* Painéis de controle com indicadores chave de desempenho (KPIs) da saúde pública em Goiás.
-* Blog com notícias e informações sobre saúde pública.
-* Fórum para discussão de temas relacionados à saúde pública.
+* Painéis de controle com indicadores chave de desempenho (KPIs) dos dados públicos.
+* Blog com notícias e informações sobre alguma secretaria em específico.
+* Fórum para discussão de temas relacionados ao gastos públicos.
 
 
 **Próximos passos:**
