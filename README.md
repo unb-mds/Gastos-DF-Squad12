@@ -7,8 +7,26 @@
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
 ## Sobre
- 
-- Gastos DF é um projeto da disciplina de MDS (Métodos de Desenvolvimento de Software) onde neste projeto buscamos extrair dados do diário oficial do Distrito Federal sobre os maiores gastos do governo distrital separado por tipos e exibir de forma amigável em um site.
+
+- Gastos DF é um projeto desenvolvido como parte da disciplina de Métodos de Desenvolvimento de Software (MDS). O principal objetivo deste projeto é oferecer transparência e acessibilidade aos gastos do governo distrital do Distrito Federal, extraindo e exibindo dados do diário oficial de forma clara e organizada.
+
+### Objetivos do Projeto
+1. **Transparência**: Facilitar o acesso aos dados públicos sobre os maiores gastos do governo distrital, promovendo a transparência nas finanças públicas.
+2. **Organização**: Categorização dos gastos por tipo (dividido por secretárias) para proporcionar uma visão detalhada e segmentada das despesas.
+3. **Acessibilidade**: Exibir os dados em uma plataforma amigável e intuitiva, acessível a todos os cidadãos interessados em acompanhar a aplicação dos recursos públicos.
+
+### Metodologia
+- **Extração de Dados**: Utilização de técnicas de web scraping e mineração de dados para extrair informações relevantes do diário oficial do Distrito Federal.
+- **Análise e Classificação**: Processamento e categorização dos dados extraídos para identificar e separar os maiores gastos por diferentes tipos, como saúde, educação, infraestrutura, entre outros.
+- **Desenvolvimento Web**: Criação de um site interativo e responsivo onde os dados serão exibidos de forma gráfica e textual, facilitando a compreensão e a navegação.
+
+### Ferramentas e Tecnologias
+- **Linguagens de Programação**: Python para extração e processamento de dados, Html e Css para a apresentação do site.
+- **Frameworks**: Foi utilizado o Bootstrap para o frontend e a própria API do querido diário para a mineração dos dados.
+
+### Impacto Esperado
+Gastos DF visa ser uma ferramenta essencial para promover a transparência e a responsabilidade no uso dos recursos públicos no Distrito Federal. Ao tornar os dados de despesas governamentais mais acessíveis e compreensíveis, esperamos engajar a população e estimular uma maior participação cidadã no monitoramento das finanças públicas.
+
 
 - Nosso projeto pode ser visitado nesse link! (https://github.com/unb-mds/Gastos-DF-Squad12/)
 
