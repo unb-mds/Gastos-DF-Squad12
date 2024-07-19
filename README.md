@@ -6,8 +6,6 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
-<img src=".jpeg" alt="logo aqui">
-
 ## Sobre
  
 - Gastos DF é um projeto da disciplina de MDS (Métodos de Desenvolvimento de Software) onde neste projeto buscamos extrair dados do diário oficial do Distrito Federal sobre os maiores gastos do governo distrital separado por tipos e exibir de forma amigável em um site.
