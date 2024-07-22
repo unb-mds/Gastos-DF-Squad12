@@ -1,84 +1,46 @@
 # GASTOSDF
 
-![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/unb-mds/Gastos-DF-Squad12?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/unb-mds/Gastos-DF-Squad12?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/unb-mds/Gastos-DF-Squad12?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/unb-mds/Gastos-DF-Squad12?style=for-the-badge)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/unb-mds/Gastos-DF-Squad12?style=for-the-badge)
 
 ## Sobre
 
-- Gastos DF é um projeto desenvolvido como parte da disciplina de Métodos de Desenvolvimento de Software (MDS). O principal objetivo deste projeto é oferecer transparência e acessibilidade aos gastos do governo distrital do Distrito Federal, extraindo e exibindo dados do diário oficial de forma clara e organizada.
+- Gastos DF é um projeto desenvolvido como parte da disciplina de Métodos de Desenvolvimento de Software (MDS). O principal objetivo deste projeto é oferecer transparência e acessibilidade aos gastos do governo distrital do Distrito Federal, extraindo e exibindo dados do diário oficial de forma clara e organizada em uma web page, onde buscamos engajar a população e estimular uma maior participação cidadã no monitoramento das finanças públicas.
 
-### Objetivos do Projeto
-1. **Transparência**: Facilitar o acesso aos dados públicos sobre os maiores gastos do governo distrital, promovendo a transparência nas finanças públicas.
-2. **Organização**: Categorização dos gastos por tipo (dividido por secretárias) para proporcionar uma visão detalhada e segmentada das despesas.
-3. **Acessibilidade**: Exibir os dados em uma plataforma amigável e intuitiva, acessível a todos os cidadãos interessados em acompanhar a aplicação dos recursos públicos.
+## 🔎 Localização dos ambientes 
 
-### Metodologia
-- **Extração de Dados**: Utilização de técnicas de web scraping e mineração de dados para extrair informações relevantes do diário oficial do Distrito Federal.
-- **Análise e Classificação**: Processamento e categorização dos dados extraídos para identificar e separar os maiores gastos por diferentes tipos, como saúde, educação, infraestrutura, entre outros.
-- **Desenvolvimento Web**: Criação de um site interativo e responsivo onde os dados serão exibidos de forma gráfica e textual, facilitando a compreensão e a navegação.
+O front-end esta localizado na branch `main` na pasta `webPage`
 
-### Ferramentas e Tecnologias
-- **Linguagens de Programação**: Python para extração e processamento de dados, Html e Css para a apresentação do site.
-- **Frameworks**: Foi utilizado o Bootstrap para o frontend e a própria API do querido diário para a mineração dos dados.
+COLOCAR A API QUANDO ELA JA ESTIVER CRIADA
 
-### Impacto Esperado
-Gastos DF visa ser uma ferramenta essencial para promover a transparência e a responsabilidade no uso dos recursos públicos no Distrito Federal. Ao tornar os dados de despesas governamentais mais acessíveis e compreensíveis, esperamos engajar a população e estimular uma maior participação cidadã no monitoramento das finanças públicas.
+O back-end esta localizado na branch `main` na pasta `Back`
 
-
-- Nosso projeto pode ser visitado nesse link! (https://github.com/unb-mds/Gastos-DF-Squad12/)
-
-## 💻 Pré-requisitos
-
-Antes de começar, verifique se você atendeu aos seguintes requisitos:
-
-- Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-- Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
-- Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
+A documentação esta localizada na branch `documentacao`
 
 ## 🚀 Execução do ambiente
 
-Siga estas etapas:
+Cada ambiente tem um `readme.md` contendo instruções de como execultar os seus respectivos ambientes.
 
-Linux e macOS:
+COLOCAR DEPOIS O LINK DO README.MD DO FRONT-END
 
-```
-<comando_de_instalação>
-```
+COLOCAR DEPOIS O LINK DO README.MD DO APIL
 
-Windows:
+COLOCAR DEPOIS O LINK DO README.MD DO BACK-END
 
-```
-<comando_de_instalação>
-```
-
-## ☕ Usando GASTOS DF
-
-Para usar o sistema gastosdf, siga estas etapas:
-
-```
-<exemplo_de_uso>
-```
+Essas instruções também estão contidas na <a href=" unb-mds.github.io/Gastos-DF-Squad12/ ">documentação</a>
 
 ## 📚 Documentação
 
-A documentação do projeto pode ser encontrada <a href="https://unb-mds.github.io/Saude-DF-Squad12/">clicando aqui</a>
+A documentação do projeto pode ser encontrada <a href=" unb-mds.github.io/Gastos-DF-Squad12/ ">clicando aqui</a>
 
 📎 Extra
 
 Stoy Map, Activity Flow,
 
 - Para acessar o Story Map, Activity Flow, Jornadas do usuário <a href="https://miro.com/app/board/uXjVKSnWUPs=/?share_link_id=11173740909">clique aqui</a>
-
-Arquitetura
-
-- Para acessar a arquitetura <a href="https://www.google.com">clique aqui</a>
-
-Protótipo
-
-- Para acessar o protótipo <a href="https://www.google.com">clique aqui</a>
 
 ## 🤝 Colaboradores
 
@@ -123,7 +85,3 @@ Protótipo
         </td>
 </table>
 </center>
-
-## 📝 Licença
-
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
