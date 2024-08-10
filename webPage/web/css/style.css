@@ -1,0 +1,234 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #004d40;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu li {
+  margin: 0 15px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#logo_gastos {
+  width: 50px;
+  margin-right: 20px;
+}
+
+/* Logo */
+.logo_container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.logo_container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Content */
+.content {
+  background: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.content h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.content p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+  background-color: #004d40;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer__container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.footer__title {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer__description {
+  margin-bottom: 20px;
+}
+
+.footer__social a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* CSS das caixas de marcar */
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-light-grey: #E6E6E6;
+  --color-grey: #CCCCCC;
+  --color-dark-grey: #7B7B7B;
+  --color-primary: #2AA1C0;
+  --color-secondary: #0E647D;
+}
+
+.container_checadores {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 300;
+  margin-top: 0;
+}
+
+/* Controle da caixa em que está o HTML os checadores */
+.control-group {
+  display: inline-block;
+  vertical-align: top;
+  background: var(--color-white);
+  text-align: left;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 300px;
+  height: 500px;
+  margin: 10px;
+}
+
+/* Estilos da caixa */
+.control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* Estilos dos indicadores */
+.control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: var(--color-light-grey);
+}
+
+.control--radio .control__indicator {
+  border-radius: 50%; /* Makes radio buttons circular */
+}
+
+/* Hover and focus */
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+  background: var(--color-grey);
+}
+
+/* Checked */
+.control input:checked ~ .control__indicator {
+  background: var(--color-primary);
+}
+
+/* Hover when checked */
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+  background: var(--color-secondary);
+}
+
+/* Disabled */
+.control input:disabled ~ .control__indicator {
+  background: var(--color-light-grey);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.control__indicator:after {
+  content: '';
+  position: absolute;
+  display: none; /* Hide check */
+}
+
+.control input:checked ~ .control__indicator:after {
+  display: block; /* Show check */
+}
+
+/* Checkbox tick */
+.control--checkbox .control__indicator:after {
+  left: 8px;
+  top: 4px;
+  width: 3px;
+  height: 8px;
+  border: solid var(--color-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Disabled tick color */
+.control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: var(--color-dark-grey);
+}
+
+/* Radio button inner circle */
+.control--radio .control__indicator:after {
+  left: 7px;
+  top: 7px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: var(--color-grey);
+}
