@@ -1,11 +1,11 @@
-from dotenv import load_dotenv
+import sys
 import os
 
-load_dotenv()
+# Adiciona o diretório raiz ao PYTHONPATH
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
+if project_root not in sys.path:
+    sys.path.append(project_root)
 
-# Agora o PYTHONPATH será configurado conforme o arquivo .env
-import sys
-sys.path.insert(0, os.getenv('PYTHONPATH'))
 
 import uvicorn
 from fastapi import FastAPI 
