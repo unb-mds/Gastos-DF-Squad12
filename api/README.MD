@@ -21,7 +21,7 @@ Tentei. Não roda, ativa o WSL ou instala um ubuntu e segue os passos do linux �
 
 ### No linux (ubuntu)
 
-Dentro da pasta `api` execulte os seguintes comandos:
+Dentro da pasta raiz do projeto `Gastos-DF-Squad12` execulte os seguintes comandos:
 
 Para ativar o ambiente virtual do python execute:
 ```
@@ -30,7 +30,7 @@ source venv/bin/activate
 
 Em seguida para abrir um servidor local e visualizar no seu navegador execute:
 ```
-python3 main.py
+python3 api/main.py
 ```
 
 Será aberto no endereço http://localhost:8001/
