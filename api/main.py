@@ -13,12 +13,14 @@ from fastapi import FastAPI
 from puxador_bens.routers import puxador_bens_router
 from puxador_compras.routers import puxador_compras_router
 from puxador_credito.routers import puxador_credito_router
+from puxador_dividas.routers import puxador_dividas_router
 
 app = FastAPI()
 
 app.include_router(puxador_bens_router.router)
 app.include_router(puxador_compras_router.router)
 app.include_router(puxador_credito_router.router)
+app.include_router(puxador_dividas_router.router)
 
 
 
