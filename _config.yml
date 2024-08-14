@@ -1,2 +1,2 @@
 exclude:
-  - api/venv/
+  - venv/
