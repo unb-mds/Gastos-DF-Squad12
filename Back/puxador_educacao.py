@@ -3,7 +3,8 @@ import requests
 
 # Fazendo a solicitação GET para a API
 response = requests.get(
-    'https://queridodiario.ok.org.br/api/gazettes?territory_ids=5300108&published_since=2024-01-01&published_until=2024-06-28&querystring=%22N%C2%BA%20UE%20Custeio%20Total%22%20%22N%C2%BA%20CRE%2FUE%20Capital%20Custeio%20Total%22&excerpt_size=5000&number_of_excerpts=1000&pre_tags=&post_tags=&size=10000&sort_by=descending_date')
+    'https://queridodiario.ok.org.br/api/gazettes?territory_ids=5300108&published_since=2024-01-01&published_until=2024-06-28&querystring=%22N%C2%BA%20UE%20Custeio%20Total%22%20%22N%C2%BA%20CRE%2FUE%20Capital%20Custeio%20Total%22&excerpt_size=50000&number_of_excerpts=100&pre_tags=&post_tags=&size=10000&sort_by=descending_date'
+)
 
 # Verificando se a solicitação foi bem-sucedida
 if response.status_code == 200:
@@ -73,6 +74,30 @@ if response.status_code == 200:
                         for match in matches:
                             escola = match[0].strip()
                             total = match[2].strip()
+
+                            # Convertendo o valor total de texto para float
+                            total = total.replace('.', '').replace(',', '.')
+                            total_float = float(total)
+
+                            # Adicionando o valor total ao total gasto no dia
+                            total_gasto_dia += total_float
+
+                            print(f"{escola}\nTotal: R${total_float:.2f}")
+
+            # Verificando o padrão específico "Nº CRE / UE Capital Custeio Total" no segundo formato
+            if "Nº CRE / UE Capital Custeio Total" in excerto:
+                # Dividindo o excerto por linhas
+                linhas = excerto.strip().split('\n')
+
+                # Iterando sobre as linhas a partir da linha do cabeçalho
+                for linha in linhas[linhas.index("Nº CRE / UE Capital Custeio Total") + 1:]:
+                    # Aplicando a expressão regular para capturar os valores
+                    matches = re.findall(r'\d+\s+([\w\s]+?)\s+R\$\s*([\d,.]+)\s+R\$\s*([\d,.]+)\s+R\$\s*([\d,.]+)', linha)
+
+                    if matches:
+                        for match in matches:
+                            escola = match[0].strip()
+                            total = match[3].strip()
 
                             # Convertendo o valor total de texto para float
                             total = total.replace('.', '').replace(',', '.')
