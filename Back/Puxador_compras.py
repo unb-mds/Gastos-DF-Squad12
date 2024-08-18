@@ -1,5 +1,7 @@
+from fastapi import FastAPI
 import requests
 import re
+
 from typing import List, Dict, Union
 from pydantic import BaseModel
 from datetime import date
@@ -8,13 +10,15 @@ class DateRange(BaseModel):
     published_since: date
     published_until: date
 
-async def puxador_bens1(date_range: DateRange) -> Union[List[Dict[str, Union[str, float]]], int]:
+
+async def puxador_compras(date_range: DateRange) -> Union[List[Dict[str, Union[str, float]]], int]:
     # Formatando as datas no formato americano
     published_since_str = date_range.published_since.strftime('%Y-%m-%d')
     published_until_str = date_range.published_until.strftime('%Y-%m-%d')
     # Fazendo a solicitação GET para a API
     response = requests.get(
-        f'https://queridodiario.ok.org.br/api/gazettes?territory_ids=5300108&published_since={published_since_str}&published_until={published_until_str}&querystring=%22EXTRATO%20DO%20CONTRATO%20DE%20AQUISI%C3%87%C3%83O%20DE%20BENS%22&excerpt_size=4000&number_of_excerpts=10000&pre_tags=&post_tags=&size=10000&sort_by=descending_date')
+        f'https://queridodiario.ok.org.br/api/gazettes?territory_ids=5300108&published_since={published_since_str}&published_until={published_until_str}&querystring=%22cujo%20objeto%20%C3%A9%20a%20aquisi%C3%A7%C3%A3o%20do%20item%20identificado%20pelo%20C%C3%B3digo%22&excerpt_size=800&number_of_excerpts=10000&pre_tags=&post_tags=&size=10000&sort_by=ascending_date')
+
     # Verificando se a solicitação foi bem-sucedida
     if response.status_code == 200:
 
@@ -35,7 +39,7 @@ async def puxador_bens1(date_range: DateRange) -> Union[List[Dict[str, Union[str
             # Acessando a data de cada gazette
             data = gazette['date']
 
-            # Verificando se a data já foi processada
+            # Verificando se a data já foi impressa
             if data not in datas_vistas:
                 # Adicionando a data ao conjunto de datas vistas
                 datas_vistas.add(data)
@@ -48,13 +52,12 @@ async def puxador_bens1(date_range: DateRange) -> Union[List[Dict[str, Union[str
             for excerto in excertos:
                 # Remover quebras de linha no meio das palavras
                 excerto = re.sub(r'(\w)-\n(\w)', r'\1\2', excerto)
-                # Remover todas as quebras de linha
                 excerto = excerto.replace('\n', ' ')
 
-                # Usando expressão regular para encontrar Empresa, CNPJ, Objeto e Valor
-                empresa_match = re.search(r'(?:FORNECEDOR|empresa)\s+([\w\s\-ÇçÉéÁáÍíÓóÚúÃãÕõâêîôûÂÊÎÔÛäëïöüÄËÏÖÜ]+)\s+.*?CNPJ[\s:nº]*([\d./-]+)', excerto, re.DOTALL)
-                objeto_match = re.search(r'OBJETO:\s*([^\n,]+?(?:,\s*para atender as demandas)?(?:\s*da Vice-Governadoria)?.*?)\s*VALOR', excerto, re.DOTALL)
-                valor_match = re.search(r'VALOR (?:DO CONTRATO)?:\s*R\$ ([\d,.]+)', excerto)
+                # Usando expressão regular para encontrar a Empresa, Objeto e Valor
+                empresa_match = re.search(r'empresa\s+([\w\s\-ÇçÉéÁáÍíÓóÚúÃãÕõâêîôûÂÊÎÔÛäëïöüÄËÏÖÜ]+)\s+-\s+CNPJ:\s+(\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2})', excerto, re.DOTALL)
+                objeto_match = re.search(r'cujo objeto é a aquisição do item identificado pelo Código SES\s+\d+\s+-\s+([^\n,]+)', excerto, re.DOTALL)
+                valor_match = re.search(r'valor global de R\$ ([\d,.]+)', excerto)
 
                 if empresa_match and objeto_match and valor_match:
                     # Extraindo a empresa e o CNPJ encontrados
@@ -63,6 +66,7 @@ async def puxador_bens1(date_range: DateRange) -> Union[List[Dict[str, Union[str
 
                     # Extraindo o objeto encontrado e removendo parte desnecessária
                     objeto = objeto_match.group(1).strip()
+                    objeto = re.sub(r',\s*para atender as necessidades.*', '', objeto)
 
                     # Extraindo o valor encontrado
                     valor = valor_match.group(1)
