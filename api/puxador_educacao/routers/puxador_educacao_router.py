@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from typing import Dict, Any
 from pydantic import BaseModel
 from datetime import date
-from Back.puxador_educacao import puxador_educacao
+from Back.Puxador_educacao import puxador_educacao
 
 
 router = APIRouter(prefix="/puxador-educacao")
