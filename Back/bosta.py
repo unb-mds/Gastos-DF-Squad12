@@ -68,7 +68,7 @@ async def puxador_educacao(date_range: DateRange) -> Union[List[Dict[str, Union[
                                 # Convertendo o valor total de texto para float
                                 total = total.replace('.', '').replace(',', '.')
                                 total_float = float(total)
-                                
+
                                 # Extraindo o nome do município do campo escola
                                 municipio = escola.split('CRE')[-1].strip()
 
@@ -101,7 +101,7 @@ async def puxador_educacao(date_range: DateRange) -> Union[List[Dict[str, Union[
                                 # Convertendo o valor total de texto para float
                                 total = total.replace('.', '').replace(',', '.')
                                 total_float = float(total)
-                                
+
                                 # Extraindo o nome do município do campo escola
                                 municipio = escola.split('CRE')[-1].strip()
 
@@ -134,7 +134,7 @@ async def puxador_educacao(date_range: DateRange) -> Union[List[Dict[str, Union[
                                 # Convertendo o valor total de texto para float
                                 total = total.replace('.', '').replace(',', '.')
                                 total_float = float(total)
-                                
+
                                 # Extraindo o nome do município do campo escola
                                 municipio = escola.split('CRE')[-1].strip()
 

@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from datetime import date
 #from Back import puxador_bens
 #from ...Back import puxador_bens
-from Back.puxador_bens import puxador_bens1
+from Back.puxador_bens import puxador_bens
 
 
 router = APIRouter(prefix="/puxador-bens")
@@ -19,7 +19,7 @@ class DateRange(BaseModel):
 @router.post("/")
 async def post_bens(date_range: DateRange):
     
-    result = await puxador_bens1(date_range)
+    result = await puxador_bens(date_range)
     
     if isinstance(result, int):
         # Se o resultado for um código de status, retorne um erro
