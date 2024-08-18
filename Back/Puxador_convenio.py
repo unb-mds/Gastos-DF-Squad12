@@ -9,7 +9,7 @@ class DateRange(BaseModel):
     published_since: date
     published_until: date
 
-async def puxador_bens1(date_range: DateRange) -> Union[List[Dict[str, Union[str, float]]], int]:
+async def puxador_convenio(date_range: DateRange) -> Union[List[Dict[str, Union[str, float]]], int]:
     # Formatando as datas no formato americano
     published_since_str = date_range.published_since.strftime('%Y-%m-%d')
     published_until_str = date_range.published_until.strftime('%Y-%m-%d')

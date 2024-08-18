@@ -41,8 +41,6 @@ async def puxador_credito(date_range: DateRange) -> Union[List[Dict[str, Union[s
 
             # Verificando se a data já foi impressa
             if data not in datas_vistas:
-                print("\nData:", data)
-                print("Diario oficial:", url)
                 # Adicionando a data ao conjunto de datas vistas
                 datas_vistas.add(data)
 
@@ -73,8 +71,6 @@ async def puxador_credito(date_range: DateRange) -> Union[List[Dict[str, Union[s
                     valor_limpo = valor_limpo.replace(',', '.')
                     # Convertendo o valor para float
                     valor_float = float(valor_limpo)
-
-                    print(f"Decreto: {decreto}, Valor: R${valor_float:.2f}")
                     
                     results.append({
                         "data": data,

@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from datetime import date
 #from Back import puxador_bens
 #from ...Back import puxador_bens
-from Back.puxador_bens import puxador_bens
+from Back.Puxador_bens import puxador_bens
 
 
 router = APIRouter(prefix="/puxador-bens")
