@@ -1,6 +1,7 @@
 services:
   - type: web
     name: gastosdf-api
+    env: python
     runtime: python
     plan: free
     autoDeploy: false
