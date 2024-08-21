@@ -57,7 +57,7 @@ body {
   padding: 20px;
   margin: 20px auto;
   width: 80%;
-  max-width: 800px;
+  max-width: 1000px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
@@ -114,6 +114,38 @@ body {
   --color-primary: #2AA1C0;
   --color-secondary: #0E647D;
 }
+
+.select {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+}
+
+.select select {
+  width: 100%;
+  height: 45px;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.select__arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 1em;
+  color: #333;
+}
+
 
 .container_checadores {
   width: 100%;
@@ -231,4 +263,30 @@ h1 {
   width: 6px;
   border-radius: 50%;
   background: var(--color-grey);
+}
+
+/* CSS DA CAIXA DE DATA*/
+
+[type="date"] {
+  background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+}
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+/* custom styles */
+label {
+  display: block;
+}
+input {
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 3px 5px;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+  width: 200px;
+  height: 50px;
 }
