@@ -1,6 +1,9 @@
 import sys
 import os
 
+# Adiciona o diretório Back ao sys.path
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Back'))
+
 # Adiciona o diretório raiz ao PYTHONPATH
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 if project_root not in sys.path:
