@@ -186,4 +186,3 @@ function autocompletar() {
 }
 
 document.getElementById('campoPesquisa').addEventListener('input', autocompletar);
-
