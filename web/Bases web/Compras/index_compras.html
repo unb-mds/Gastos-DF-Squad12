@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Compras</title>
+    <link rel="stylesheet" href="styles_compras.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Análise de Compras</h1>
+        
+        <!-- Seletor de período -->
+        <div class="periodo-selector">
+            <button id="btnDia">Dia</button>
+            <button id="btnSemana">Semana</button>
+            <button id="btnMes">Mês</button>
+        </div>
+        
+        <!-- Gráfico -->
+        <div class="chart-container">
+            <canvas id="graficoGastos"></canvas>
+        </div>
+        
+        <!-- Botão Detalhes -->
+        <button id="btnDetalhes">Detalhes</button>
+        
+        <!-- Área de pesquisa -->
+        <div id="areaPesquisa" style="display: none;">
+            <input type="text" id="campoPesquisa" placeholder="Pesquisar...">
+            <select id="colunaPesquisa">
+                <option value="data">Data</option>
+                <option value="objeto">Objeto</option>
+                <option value="valor">Valor</option>
+                <option value="empresa">Empresa</option>
+                <option value="cnpj">CNPJ</option>
+            </select>
+        </div>
+        
+        <!-- Tabela de detalhes -->
+        <div id="tabelaDetalhes" style="display: none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Objeto</th>
+                        <th>Valor</th>
+                        <th>Empresa</th>
+                        <th>CNPJ</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela">
+                    <!-- Dados serão inseridos aqui via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script_compras.js"></script>
+</body>
+</html>
