@@ -6,6 +6,22 @@
     <title>Gráfico e Tabela de Gastos</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        #expenseChart {
+            max-width: 2000px; /* Define o tamanho do gráfico */
+            margin: auto;
+        }
+        #historySection {
+            display: none; /* Oculta a tabela inicialmente */
+            margin-top: 20px;
+        }
+        #showHistoryBtn {
+            display: block;
+            margin: 20px auto; /* Centraliza o botão abaixo do gráfico */
+            position: sticky; /* Fixa o botão */
+            top: 0;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -16,8 +32,12 @@
         </select>
         <canvas id="expenseChart"></canvas>
     </div>
-    <div>
+
+    <button id="showHistoryBtn">Ver Histórico</button>
+
+    <div id="historySection">
         <h2>Detalhes dos Gastos</h2>
+        <input type="text" id="searchInput" placeholder="Pesquisar por data ou decreto">
         <table>
             <thead>
                 <tr>
@@ -32,6 +52,34 @@
             </tbody>
         </table>
     </div>
+
     <script src="script.js"></script>
+    <script>
+        document.getElementById('showHistoryBtn').addEventListener('click', function() {
+            const historySection = document.getElementById('historySection');
+            if (historySection.style.display === 'block') {
+                historySection.style.display = 'none';
+                this.textContent = 'Ver Histórico';
+            } else {
+                historySection.style.display = 'block';
+                this.textContent = 'Ocultar Histórico';
+            }
+        });
+
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            const searchValue = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#decreeTable tr');
+            
+            rows.forEach(row => {
+                const dateCell = row.cells[0].textContent.toLowerCase();
+                const decreeCell = row.cells[1].textContent.toLowerCase();
+                if (dateCell.includes(searchValue) || decreeCell.includes(searchValue)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
