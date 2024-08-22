@@ -64,14 +64,32 @@
             height: 300px;
         }
 
-        #history-table {
-            margin-top: 30px;
+        #history-button {
+            display: none; /* Botão inicialmente oculto */
+            margin: 30px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #history-table-container {
+            display: none;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            border-collapse: collapse;
-            width: 100%;
+            margin-top: 20px;
             background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #history-table {
+            width: 100%;
+            border-collapse: collapse;
         }
 
         #history-table th, #history-table td {
@@ -94,6 +112,7 @@
     <div id="chart-container">
         <canvas id="chart"></canvas>
     </div>
+    <button id="history-button" onclick="toggleHistory()">Ver Histórico</button>
     <div id="history-table-container">
         <table id="history-table">
             <thead>
@@ -152,6 +171,9 @@
             const schoolData = data.find(escola => escola.escola === schoolName);
 
             if (schoolData) {
+                // Mostrar o botão "Ver Histórico"
+                document.getElementById('history-button').style.display = 'block';
+
                 // Ordena os dados pela data (a mais recente no final)
                 schoolData.dados.sort((a, b) => {
                     const dateA = new Date(a.data.split('-').reverse().join('-'));
@@ -174,47 +196,43 @@
                 }
 
                 window.chartInstance = new Chart(ctx, {
-                    type: 'bar', // Altere o tipo para 'bar' para criar um gráfico de barras verticais
+                    type: 'bar',
                     data: {
-                        labels: labels,
+                        labels: labels.reverse(), // Reverter os rótulos para que a data mais recente fique à direita
                         datasets: [{
                             label: `Valores Mensais - ${schoolName}`,
-                            data: values,
+                            data: values.reverse(), // Reverter os valores para que correspondam aos rótulos
                             backgroundColor: 'rgba(75, 192, 192, 0.2)',
                             borderColor: 'rgba(75, 192, 192, 1)',
-                            borderWidth: 1
+                            borderWidth: 1,
                         }]
                     },
                     options: {
                         responsive: true,
                         scales: {
                             x: {
+                                display: true,
                                 title: {
                                     display: true,
                                     text: 'Mês/Ano'
                                 }
                             },
                             y: {
+                                display: true,
                                 title: {
                                     display: true,
                                     text: 'Valor (R$)'
-                                },
-                                ticks: {
-                                    beginAtZero: true,
-                                    callback: function(value) {
-                                        return `R$ ${value.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
-                                    }
                                 }
                             }
                         }
                     }
                 });
 
-                // Atualiza a tabela com o histórico de investimentos
+                // Prepara a tabela, mas não a exibe imediatamente
                 const historyBody = document.getElementById('history-body');
                 historyBody.innerHTML = '';
 
-                schoolData.dados.forEach(d => {
+                schoolData.dados.reverse().forEach(d => { // Reverter para mostrar a data mais recente primeiro
                     const row = document.createElement('tr');
 
                     const dateCell = document.createElement('td');
@@ -227,6 +245,15 @@
 
                     historyBody.appendChild(row);
                 });
+            }
+        }
+
+        function toggleHistory() {
+            const historyContainer = document.getElementById('history-table-container');
+            if (historyContainer.style.display === 'none' || historyContainer.style.display === '') {
+                historyContainer.style.display = 'block';
+            } else {
+                historyContainer.style.display = 'none';
             }
         }
     </script>
