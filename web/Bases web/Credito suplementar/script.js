@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('resultados.json');
+            const response = await fetch('resultados_credito.json');
             data = await response.json();
             updateChart('day');
             updateTable();
