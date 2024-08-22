@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico e Tabela de Gastos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Gráfico de Gastos</h1>
+        <select id="time-period">
+            <option value="day">Dia</option>
+            <option value="month">Mês</option>
+        </select>
+        <canvas id="expenseChart"></canvas>
+    </div>
+    <div>
+        <h2>Detalhes dos Gastos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Decreto</th>
+                    <th>Valor</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody id="decreeTable">
+                <!-- As linhas da tabela serão inseridas aqui pelo JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
