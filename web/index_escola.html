@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesquisa de Escolas</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -65,7 +67,8 @@
         }
 
         #history-button {
-            display: none; /* Botão inicialmente oculto */
+            display: none;
+            /* Botão inicialmente oculto */
             margin: 30px auto;
             padding: 10px 20px;
             font-size: 16px;
@@ -92,7 +95,8 @@
             border-collapse: collapse;
         }
 
-        #history-table th, #history-table td {
+        #history-table th,
+        #history-table td {
             padding: 10px;
             text-align: left;
             border-bottom: 1px solid #ddd;
@@ -103,7 +107,47 @@
         }
     </style>
 </head>
+
 <body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="menu">
+            <ul>
+                <img id="logo_gastos" src="imagens/favicon.png" />
+                <li>
+                    <a href="index.html">
+                        <h2 id="botao1">Início</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="sobre_nos.html">
+                        <h2 id="botao1">Sobre nós</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="sobre_projeto.html">
+                        <h2 id="botao1">Sobre o projeto</h2>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)">
+                        <h2 id="botao1">Gráficos</h2>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="index_convenios.html">Convênios</a>
+                        <a href="index_compras.html">Compras</a>
+                        <a href="index_credito.html">Crédito</a>
+                        <a href="index_escola.html">Escolas</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <br />
+	<br />
+	<br />
+
     <h1>Pesquisa de Escolas</h1>
     <div id="search-container">
         <input type="text" id="search-input" placeholder="Digite o nome da escola..." oninput="showSuggestions()">
@@ -131,7 +175,7 @@
         let data = [];
 
         // Carrega o JSON
-        fetch('resultados.json')
+        fetch('resultados_escola.json')
             .then(response => response.json())
             .then(json => {
                 data = json;
@@ -257,5 +301,20 @@
             }
         }
     </script>
+
+<div class="content">
+
+    <p>
+        <h2>Como usar o gerador de gráficos:</h2>
+    </p>
+    <p>
+        Para pesquisar por escolas, basta digitar o nome da escola com a sigla. Por exemplo: <strong>CE 01 DE SÃO SEBASTIÃO</strong>.
+    </p>
+    <p>
+        À medida que você digita, a pesquisa será automaticamente completada, e os gráficos relacionados serão exibidos para você.
+    </p>
+    
+</div>
 </body>
+
 </html>

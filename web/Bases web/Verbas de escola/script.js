@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let schoolsData = [];
 
     // Carrega o arquivo JSON
-    fetch('resultados.json')
+    fetch('resultados_escola.json')
         .then(response => response.json())
         .then(data => {
             schoolsData = data;
