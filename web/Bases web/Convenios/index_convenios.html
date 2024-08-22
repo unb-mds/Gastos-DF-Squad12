@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Gastos</title>
+    <link rel="stylesheet" href="styles_gráfico.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="imagens/favicon.png" type="image/x-icon">
+
+</head>
+<body>
+	<!-- Navbar -->
+	<div class="navbar">
+		<div class="menu">
+			<ul>
+				<img id="logo_gastos" src="imagens/favicon.png" />
+				<li>
+					<a href="/index.html">
+						<h2 id="botao1">Início</h2>
+					</a>
+				</li>
+				<li>
+					<a href="/web/sobre_nos.html">
+						<h2 id="botao1">Sobre nós</h2>
+					</a>
+				</li>
+				<li>
+					<a href="/web/sobre_projeto.html">
+						<h2 id="botao1">Sobre o projeto</h2>
+					</a>
+				</li>
+				<li class="dropdown">
+					<a href="javascript:void(0)">
+						<h2 id="botao1">Gráficos</h2>
+					</a>
+					<div class="dropdown-content">
+						<a href="index_convenios.html">Convênios</a>
+						<a href="opcao2.html">Opção 2</a>
+						<a href="opcao3.html">Opção 3</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+		<!-- Logo -->
+		<div class="logo_container">
+			<img src="imagens/simbolo.png" alt="Logo do gastos DF" />
+		</div>
+    <div class="container">
+        <input type="text" id="search" placeholder="Pesquise por interessado...">
+        <div class="controls">
+            <button id="toggle-view">Visualização Diária</button>
+        </div>
+        <canvas id="chart"></canvas>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Total Gasto (R$)</th>
+                    <th>Interessado</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
