@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function fetchData() {
-        fetch('resultados.json')
+        fetch('resultados_convenio.json')
             .then(response => response.json())
             .then(json => {
                 data = json.resultados;
