@@ -12,23 +12,23 @@
 
 ## 🔎 Localização dos ambientes 
 
-O front-end esta localizado na branch `main` na pasta `webPage`
+O front-end está localizado na branch `main` na pasta `webPage`.
 
-COLOCAR A API QUANDO ELA JA ESTIVER CRIADA
+A API está localizada na branch `main` na pasta `api`.
 
-O back-end esta localizado na branch `main` na pasta `Back`
+O back-end está localizado na branch `main` na pasta `Back`.
 
-A documentação esta localizada na branch `documentacao`
+A documentação esta localizada na branch `documentacao`.
 
 ## 🚀 Execução do ambiente
 
-Cada ambiente tem um `readme.md` contendo instruções de como execultar os seus respectivos ambientes.
+Cada ambiente tem um `readme.md` contendo instruções de como executar os seus respectivos ambientes.
 
 COLOCAR DEPOIS O LINK DO README.MD DO FRONT-END
 
-COLOCAR DEPOIS O LINK DO README.MD DO APIL
+Para acessar o link da nossa API: https://github.com/unb-mds/Gastos-DF-Squad12/tree/bae3682c7d2ae6a2069a0e9e80481021a45078f6/api
 
-COLOCAR DEPOIS O LINK DO README.MD DO BACK-END
+Para acessar o link do nosso Back: https://github.com/unb-mds/Gastos-DF-Squad12/tree/bae3682c7d2ae6a2069a0e9e80481021a45078f6/Back
 
 Essas instruções também estão contidas na <a href="https://unb-mds.github.io/Gastos-DF-Squad12/">documentação</a>
 
