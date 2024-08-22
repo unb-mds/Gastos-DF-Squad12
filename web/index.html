@@ -1,56 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gastos DF</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Gastos DF</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
 	<link rel="icon" href="imagens/favicon.png" type="image/x-icon">
-  </head>
-  <body>
-    <div class="main">
-      <!-- Navbar -->
-      <div class="navbar">
-        <div class="menu">
-          <ul>
-            <img id="logo_gastos" src="imagens/favicon.png" />
-            <li>
-              <a href="index.html"><h2 id="botao1">Início</h2></a>
-            </li>
-            <li>
-              <a href=""><h2 id="botao1">Sobre nós</h2></a>
-            </li>
-            <li>
-              <a href=""><h2 id="botao1">Sobre o projeto</h2></a>
-            </li>
-          </ul>
-        </div>
-      </div>
+</head>
 
-      <!-- Logo -->
-      <div class="logo_container">
-        <img src="imagens/simbolo.png" alt="Logo do gastos DF" />
-      </div>
+<body>
+	<div class="main">
+		<!-- Navbar -->
+		<div class="navbar">
+			<div class="menu">
+				<ul>
+					<img id="logo_gastos" src="imagens/favicon.png" />
+					<li>
+						<a href="index.html">
+							<h2 id="botao1">Início</h2>
+						</a>
+					</li>
+					<li>
+						<a href="sobre_nos.html">
+							<h2 id="botao1">Sobre nós</h2>
+						</a>
+					</li>
+					<li>
+						<a href="sobre_projeto.html">
+							<h2 id="botao1">Sobre o projeto</h2>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 
-      <!-- Content -->
-      <div class="content">
-        <h1>Sobre o Gastos DF</h1>
-        <p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt neque
-			expedita atque eveniet quis nesciunt. Quos nulla vero consequuntur,
-			fugit nemo ad delectus a quae totam ipsa illum minus laudantium? Lorem
-			ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
-      </div>
-      <br />
-      <br />
-      <br />
-      <br />
+		<!-- Logo -->
+		<div class="logo_container">
+			<img src="imagens/simbolo.png" alt="Logo do gastos DF" />
+		</div>
 
-	  <div class="container_checadores">
-	
-	<!-- Aqui é o seletor do tipo de checkbox, ele suporta mais de uma marcação
+		<!-- Content -->
+		<div class="content">
+
+			<p>
+			<h2>Sobre o Gastos DF</h2>
+			<p>Gastos DF é um projeto em desenvolvimento na disciplina de Métodos de Desenvolvimento de Software. Nele,
+				estamos
+				focados em extrair informações do Diário Oficial do Distrito Federal sobre os principais investimentos
+				do governo,
+				segmentando esses dados por municípios e apresentando de maneira acessível ao público em um site de
+				simples e fácil
+				navegação.
+			</p>
+			</p>
+		</div>
+		<br />
+		<br />
+
+
+		<div class="container_checadores">
+
+			<!-- Aqui é o seletor do tipo de checkbox, ele suporta mais de uma marcação
 
 		<div class="control-group">
 		  <h1>Checkboxes</h1>
@@ -73,7 +85,7 @@
 		</div>
 	-->
 
-	<!-- Esse é um radio checker, ele aceita só uma das opções marcadas
+			<!-- Esse é um radio checker, ele aceita só uma das opções marcadas
 		<div class="control-group">
 		  <h1>Radio buttons</h1>
 		  <label class="control control--radio">First radio
@@ -95,92 +107,68 @@
 		</div>
 	-->
 
-	<!-- Aqui são select box, elas permitem o usuário escolher 1 dentre várias opções, essa opção é a melhor nesse projeto-->
-		<div class="control-group">
-		  <h1>Escolha sua região:</h1>
-		  <div class="select">
-			<select>
-			  <option>First select</option>
-			  <option>Option</option>
-			  <option>Option</option>
-			</select>
-			<div class="select__arrow"></div>
-		  </div>
+			<!-- Aqui são select box, elas permitem o usuário escolher 1 dentre várias opções, essa opção é a melhor nesse projeto-->
+			<div class="control-group">
+				<h2>Tipo de Gasto:</h2>
+				<div class="select">
+					<br>
+					<select>
+						<option>Bens</option>
+						<option>Compras</option>
+						<option>Convênio</option>
+						<option>Crédito</option>
+						<option>Educação</option>
+					</select>
+					<div class="select__arrow"></div>
+				</div>
 
-		  <div class="select">
-			<select>
-			  <option>Second select</option>
-			  <option>Option</option>
-			  <option>Option</option>
-			</select>
-			<div class="select__arrow"></div>
-		  </div>
-		  
-		  <div class="select">
-			<select disabled="disabled">
-			  <option>Disabled</option>
-			  <option>Option</option>
-			  <option>Option</option>
-			</select>
-			<div class="select__arrow"></div>
-		  </div>
+
+			</div>
+
+			<div class="control-group">
+				<h2>Período de Tempo:</h2>
+
+				<div>
+					<label for="dateofbirth">Data de ínicio</label>
+					<input type="date" name="dateofbirth" id="dateofbirth">
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<label for="dateofbirth">Date de fim</label>
+					<input type="date" name="dateofbirth" id="dateofbirth">
+				</div>
+
+
+
+			</div>
+
 		</div>
 
-		<div class="control-group">
-			<h1>Escolha a secretária:</h1>
-			<div class="select">
-			  <select>
-				<option>First select</option>
-				<option>Option</option>
-				<option>Option</option>
-			  </select>
-			  <div class="select__arrow"></div>
-			</div>
-  
-			<div class="select">
-			  <select>
-				<option>Second select</option>
-				<option>Option</option>
-				<option>Option</option>
-			  </select>
-			  <div class="select__arrow"></div>
-			</div>
-			
-			<div class="select">
-			  <select disabled="disabled">
-				<option>Disabled</option>
-				<option>Option</option>
-				<option>Option</option>
-			  </select>
-			  <div class="select__arrow"></div>
-			</div>
-		  </div>
-		</div>
-  
-	  </div>
-	  
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="footer__container">
-          <h2 class="footer__title">Gastos Df</h2>
-          <p class="footer__description"> <!-- Colocar aqui uma descrição maneira sobre o site --></p>
-          <div class="footer__social">
-            <a href="#" class="footer__link"><i class="bx bxl-linkedin"></i></a>
-            <a href="#" class="footer__link"><i class="bx bxl-github"></i></a>
-            <a href="#" class="footer__link"><i class="bx bxl-codepen"></i></a>
-          </div>
-          <p class="footer__copy">
-            &#169; 2024 Gastos DF. Todos os direitos reservados
-          </p>
-        </div>
-      </footer>
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="footer__container">
+				<h2 class="footer__title">Gastos Df</h2>
+				<p class="footer__description"> <!-- Colocar aqui uma descrição maneira sobre o site --></p>
+				<div class="footer__social">
+					<a href="#" class="footer__link"><i class="bx bxl-linkedin"></i></a>
+					<a href="#" class="footer__link"><i class="bx bxl-github"></i></a>
+					<a href="#" class="footer__link"><i class="bx bxl-codepen"></i></a>
+				</div>
+				<p class="footer__copy">
+					&#169; 2024 Gastos DF. Todos os direitos reservados
+				</p>
+			</div>
+		</footer>
 
-  </body>
+</body>
+
 </html>
