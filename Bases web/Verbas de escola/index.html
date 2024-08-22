@@ -174,33 +174,36 @@
                 }
 
                 window.chartInstance = new Chart(ctx, {
-                    type: 'line',
+                    type: 'bar', // Altere o tipo para 'bar' para criar um gráfico de barras verticais
                     data: {
                         labels: labels,
                         datasets: [{
                             label: `Valores Mensais - ${schoolName}`,
                             data: values,
-                            borderColor: 'rgba(75, 192, 192, 1)',
                             backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                            borderWidth: 1,
-                            fill: true,
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
                         }]
                     },
                     options: {
                         responsive: true,
                         scales: {
                             x: {
-                                display: true,
                                 title: {
                                     display: true,
                                     text: 'Mês/Ano'
                                 }
                             },
                             y: {
-                                display: true,
                                 title: {
                                     display: true,
                                     text: 'Valor (R$)'
+                                },
+                                ticks: {
+                                    beginAtZero: true,
+                                    callback: function(value) {
+                                        return `R$ ${value.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+                                    }
                                 }
                             }
                         }
