@@ -10,6 +10,8 @@
 
 - Gastos DF é um projeto desenvolvido como parte da disciplina de Métodos de Desenvolvimento de Software (MDS). O principal objetivo deste projeto é oferecer transparência e acessibilidade aos gastos do governo distrital do Distrito Federal, extraindo e exibindo dados do diário oficial de forma clara e organizada em uma web page, onde buscamos engajar a população e estimular uma maior participação cidadã no monitoramento das finanças públicas.
 
+Link para a página do <a href="https://unb-mds.github.io/Gastos-DF-Squad12/web/index.html">projeto</a>.
+
 ## 🔎 Localização dos ambientes 
 
 O Front-end está localizado na branch `main` na pasta `web`.
