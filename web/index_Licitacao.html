@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Licitações</title>
+    <link rel="stylesheet" href="Bases web/licitacao/styles_licitacao.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+		<div class="navbar">
+			<div class="menu">
+				<ul>
+					<img id="logo_gastos" src="imagens/favicon.png" />
+					<li>
+						<a href="index.html">
+							<h2 id="botao1">Início</h2>
+						</a>
+					</li>
+					<li>
+						<a href="sobre_nos.html">
+							<h2 id="botao1">Sobre nós</h2>
+						</a>
+					</li>
+					<li>
+						<a href="sobre_projeto.html">
+							<h2 id="botao1">Sobre o projeto</h2>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:void(0)">
+							<h2 id="botao1">Gráficos</h2>
+						</a>
+						<div class="dropdown-content">
+							<a href="index_convenios.html">Convênios</a>
+							<a href="index_compras.html">Compras</a>
+							<a href="index_credito.html">Crédito</a>
+							<a href="index_escola.html">Escolas</a>
+							<a href="index_Licitacao.html">Licitações</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+    <header>
+        <h1>Portal de Licitações</h1>
+        <div class="search-container">
+        </div>
+    </header>
+    
+    <main>
+        <section id="chart-container">
+            <canvas id="licitacoes-chart"></canvas>
+        </section>
+        
+        <section id="licitacoes-container"></section>
+    </main>
+
+    <script src="Bases web/licitacao/script_licitacao.js"></script>
+
+    	<!-- Footer -->
+		<footer class="footer">
+			<div class="footer__container">
+				<h2 class="footer__title">Gastos Df</h2>
+				<p class="footer__description"> <!-- Colocar aqui uma descrição maneira sobre o site --></p>
+				<div class="footer__social">
+					<a href="#" class="footer__link"><i class="bx bxl-linkedin"></i></a>
+					<a href="#" class="footer__link"><i class="bx bxl-github"></i></a>
+					<a href="#" class="footer__link"><i class="bx bxl-codepen"></i></a>
+				</div>
+				<p class="footer__copy">
+					&#169; 2024 Gastos DF. Todos os direitos reservados
+				</p>
+			</div>
+		</footer>
+</body>
+</html>
