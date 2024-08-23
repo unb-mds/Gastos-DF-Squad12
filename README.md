@@ -12,29 +12,27 @@
 
 ## 🔎 Localização dos ambientes 
 
-O front-end está localizado na branch `main` na pasta `webPage`.
+O Front-end está localizado na branch `main` na pasta `web`.
 
 A API está localizada na branch `main` na pasta `api`.
 
-O back-end está localizado na branch `main` na pasta `Back`.
+O Back-end está localizado na branch `main` na pasta `Back`.
 
-A documentação esta localizada na branch `documentacao`.
+A Documentação esta localizada no repositório <a href="https://github.com/unb-mds/2024-1-Gastos-DF-Doc-Squad12">documentação</a>.
 
 ## 🚀 Execução do ambiente
 
 Cada ambiente tem um `readme.md` contendo instruções de como executar os seus respectivos ambientes.
 
-COLOCAR DEPOIS O LINK DO README.MD DO FRONT-END
+Como rodar o Front: https://unb-mds.github.io/2024-1-Gastos-DF-Doc-Squad12/frontend/#como-rodar-o-front-end
 
-Para acessar o link da nossa API: https://github.com/unb-mds/Gastos-DF-Squad12/tree/bae3682c7d2ae6a2069a0e9e80481021a45078f6/api
+Como rodar a API: https://unb-mds.github.io/2024-1-Gastos-DF-Doc-Squad12/api/#como-rodar-o-ambiente-da-api
 
-Para acessar o link do nosso Back: https://github.com/unb-mds/Gastos-DF-Squad12/tree/bae3682c7d2ae6a2069a0e9e80481021a45078f6/Back
-
-Essas instruções também estão contidas na <a href="https://unb-mds.github.io/Gastos-DF-Squad12/">documentação</a>
+Como rodar o Back: https://unb-mds.github.io/2024-1-Gastos-DF-Doc-Squad12/backend/#como-rodar-o-back-end
 
 ## 📚 Documentação
 
-A documentação do projeto pode ser encontrada <a href="https://unb-mds.github.io/Gastos-DF-Squad12/">clicando aqui</a>
+A documentação do projeto pode ser encontrada <a href="https://unb-mds.github.io/2024-1-Gastos-DF-Doc-Squad12/">clicando aqui</a>
 
 📎 Extra
 
@@ -76,12 +74,5 @@ Stoy Map, Activity Flow,
                 <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/108148904?v=4" width="150px;"/>
                 <h5 class="text-center">Douglas Wilson</h5>
             </a>
-        </td>
-          <td align="center">
-            <a href="https://github.com/g4abr3la">
-                <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/133542089?v=4" width="150px;"/>
-                <h5 class="text-center">Gabriela Xavier</h5>
-            </a>
-        </td>
 </table>
 </center>
