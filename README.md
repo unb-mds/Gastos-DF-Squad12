@@ -8,15 +8,13 @@
 
 ## Sobre
 
-- Gastos DF é um projeto desenvolvido como parte da disciplina de Métodos de Desenvolvimento de Software (MDS). O principal objetivo deste projeto é oferecer transparência e acessibilidade aos gastos do governo distrital do Distrito Federal, extraindo e exibindo dados do diário oficial de forma clara e organizada em uma web page, onde buscamos engajar a população e estimular uma maior participação cidadã no monitoramento das finanças públicas.
+- Gastos DF é um projeto para visualização de dados públicos, desenvolvido como parte da disciplina de Métodos de Desenvolvimento de Software (MDS). O principal objetivo deste projeto é oferecer transparência e acessibilidade aos gastos do governo distrital do Distrito Federal, extraindo e exibindo dados  do diário oficial de forma clara e organizada e sendo exibidos em gráficos iterativos em uma web page, onde buscamos engajar a população e estimular uma maior participação cidadã no monitoramento das finanças públicas.
 
 Link para a página do <a href="https://unb-mds.github.io/Gastos-DF-Squad12/web/index.html">projeto</a>.
 
 ## 🔎 Localização dos ambientes 
 
 O Front-end está localizado na branch `main` na pasta `web`.
-
-A API está localizada na branch `main` na pasta `api`.
 
 O Back-end está localizado na branch `main` na pasta `Back`.
 
@@ -27,8 +25,6 @@ A Documentação esta localizada no repositório <a href="https://github.com/unb
 Cada ambiente tem um `readme.md` contendo instruções de como executar os seus respectivos ambientes.
 
 Como rodar o Front: https://unb-mds.github.io/2024-1-Gastos-DF-Doc-Squad12/frontend/#como-rodar-o-front-end
-
-Como rodar a API: https://unb-mds.github.io/2024-1-Gastos-DF-Doc-Squad12/api/#como-rodar-o-ambiente-da-api
 
 Como rodar o Back: https://unb-mds.github.io/2024-1-Gastos-DF-Doc-Squad12/backend/#como-rodar-o-back-end
 
