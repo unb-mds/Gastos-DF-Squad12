@@ -1,8 +1,19 @@
-# Como rodar o ambiente da API
+# Como rodar o ambiente do Web Scrapig
 
 ## Algumas informações
 
-A api e feita em `python` usando `fastapi` e esta rodando em um ambiente virtual python com suas dependências ja instaladas.
+O Web Scraping é feita em `python` usando `fastapi` e esta rodando em um ambiente virtual python com suas dependências já instaladas.
+
+## Como o Web Sracping funciona
+
+Primeiro o nosso Web Scraping começa com o envio de uma requisição HTTP ao servidor onde o site está hospedado, no nosso caso é o (http://localhost:8001/).
+
+Segundo, servidor responde com o código HTML da página. Esse código contém todo o conteúdo da página, como texto, links, imagens, e estrutura dos dados.
+
+Terceiro, no momento que os elementos são identificados, os dados são extraídos e processados. Isso pode incluir a coleta de tabelas, listas, parágrafos ou qualquer outro elemento presente no HTML, sendo posteriormente processados para serem mostrados no nosso gráfico com os dados extraídos.
+
+Quarto, nosso script poderá ser executado periodicamente para coletar dados novos ou atualizados automaticamente do Querido Diário.
+
 
 
 O repositório principal do Gastos DF pode ser visualizado clicando <a href="https://github.com/unb-mds/Gastos-DF-Squad12">aqui</a>.
