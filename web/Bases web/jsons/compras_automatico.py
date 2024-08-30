@@ -6,7 +6,6 @@ import json
 from datetime import datetime, timedelta
 import os
 
-# Set the working directory to the script's location
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 def fetch_and_process_data(start_date, end_date):
