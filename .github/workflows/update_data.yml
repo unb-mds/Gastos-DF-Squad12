@@ -23,7 +23,12 @@ jobs:
         pip install requests
 
     - name: Run update script
-      run: python "web/Bases web/jsons/verbas_automatico.py"
+      run: |
+        python "web/Bases web/jsons/verbas_automatico.py"
+        python "web/Bases web/jsons/convenio_automatico.py"
+        python "web/Bases web/jsons/credito_automatico.py"
+        python "web/Bases web/jsons/compras_automatico.py"
+        python "web/Bases web/jsons/licitacoes_automatico.py"
 
     - name: Commit and push if changed
       run: |
