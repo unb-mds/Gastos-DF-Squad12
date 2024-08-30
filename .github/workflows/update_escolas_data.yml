@@ -1,0 +1,33 @@
+name: Update Escolas Data
+
+on:
+  schedule:
+    - cron: '0 1 * * *'  # Run at 1 AM UTC every day
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: Run update script
+      run: python "web/Bases web/jsons/verbas_automatico.py"
+
+    - name: Commit and push if changed
+      run: |
+        git config --global user.email "github-actions@example.com"
+        git config --global user.name "GitHub Actions"
+        git add web/resultados_escola.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update escolas data" && git push)
