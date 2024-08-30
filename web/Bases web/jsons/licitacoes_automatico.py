@@ -3,13 +3,13 @@ import json
 from datetime import datetime, timedelta
 import os
 
-# Set the working directory to the script's location
+
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 # URL base da API
 base_url = "https://dadosabertos.compras.gov.br/modulo-legado/1_consultarLicitacao"
 
-# Get today's date and the date 30 days ago
+# pega a data de hoje e de 30 dias atras
 end_date = datetime.now().strftime("%Y-%m-%d")
 start_date = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
 
