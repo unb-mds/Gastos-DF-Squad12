@@ -4,12 +4,11 @@ import json
 from datetime import datetime, timedelta
 import os
 
-# Set the correct paths
+# corrige os diretorios
 script_dir = os.path.dirname(os.path.abspath(__file__))
 json_file_path = os.path.join(os.path.dirname(os.path.dirname(script_dir)), 'resultados_escola.json')
 
 
-# Function to get month name in Portuguese
 def get_month_name(date):
     months = [
         "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
@@ -18,7 +17,7 @@ def get_month_name(date):
     return months[date.month - 1]
 
 
-# Get yesterday's date
+# data de ontem
 yesterday = datetime.now() - timedelta(days=1)
 yesterday_str = yesterday.strftime("%Y-%m-%d")
 
@@ -26,7 +25,7 @@ yesterday_str = yesterday.strftime("%Y-%m-%d")
 url = f'https://queridodiario.ok.org.br/api/gazettes?territory_ids=5300108&published_since={yesterday_str}&published_until={yesterday_str}&querystring=%22N%C2%BA%20UE%20Custeio%20Total%22%20%22N%C2%BA%20CRE%2FUE%20Capital%20Custeio%20Total%22&excerpt_size=50000&number_of_excerpts=100&pre_tags=&post_tags=&size=10000&sort_by=descending_date'
 response = requests.get(url)
 
-# Load existing data or create an empty list
+# carrega os dados existentes ou cria um novo
 if os.path.exists(json_file_path):
     with open(json_file_path, 'r', encoding='utf-8') as f:
         escolas_data = json.load(f)
@@ -90,7 +89,7 @@ else:
     # Se a solicitação falhar, imprima o código de status
     print("Erro:", response.status_code)
 
-# Convert the dictionary back to a list
+# Converte o dicionario de volta para uma lista
 output_data = list(escolas_dict.values())
 
 # Salvando os dados em um arquivo JSON
