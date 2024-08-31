@@ -3,13 +3,12 @@ import json
 from datetime import datetime, timedelta
 import os
 
-
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 # URL base da API
 base_url = "https://dadosabertos.compras.gov.br/modulo-legado/1_consultarLicitacao"
 
-# pega a data de hoje e de 30 dias atras
+# data de hoje e um mes atras
 end_date = datetime.now().strftime("%Y-%m-%d")
 start_date = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
 
@@ -33,6 +32,11 @@ while True:
     response = requests.get(base_url, params=params)
     response.encoding = 'utf-8'  # Garante que a resposta esteja codificada em UTF-8
     dados = response.json()
+
+    # Verifica se há resultados
+    if not dados.get("resultado"):
+        print(f"Nenhum resultado encontrado na página {pagina_atual}")
+        break
 
     # Adiciona os resultados à lista principal
     todos_os_dados.extend(dados["resultado"])
@@ -60,8 +64,11 @@ except FileNotFoundError:
 # Adiciona os novos dados aos existentes
 dados_existentes.extend(todos_os_dados)
 
-# Remove duplicatas baseadas no ID da licitação
-dados_unicos = {item['id_licitacao']: item for item in dados_existentes}.values()
+# Remove duplicatas baseadas no ID da licitação (se existir)
+if dados_existentes and 'id' in dados_existentes[0]:
+    dados_unicos = {item['id']: item for item in dados_existentes}.values()
+else:
+    dados_unicos = dados_existentes
 
 # Salva todos os dados coletados em um arquivo JSON
 with open(json_path, "w", encoding='utf-8') as arquivo_json:
