@@ -1,16 +1,20 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
 import requests
 import re
 import json
 from datetime import datetime, timedelta
 import os
 
+# seta o diretório
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 def fetch_and_process_data(start_date, end_date):
+
+    #define ontem
+    yesterday = datetime.now() - timedelta(days=1)
+    yesterday_str = yesterday.strftime("%Y-%m-%d")
+
     # Fazendo a solicitação GET para a API
-    url = f'https://queridodiario.ok.org.br/api/gazettes?territory_ids=5300108&published_since={start_date}&published_until={end_date}&querystring=%22cujo%20objeto%20%C3%A9%20a%20aquisi%C3%A7%C3%A3o%20do%20item%20identificado%20pelo%20C%C3%B3digo%22&excerpt_size=3000&number_of_excerpts=10000&pre_tags=&post_tags=&size=10000&sort_by=ascending_date'
+    url = f'https://queridodiario.ok.org.br/api/gazettes?territory_ids=5300108&published_since={yesterday_str}&published_until={yesterday_str}&querystring=%22cujo%20objeto%20%C3%A9%20a%20aquisi%C3%A7%C3%A3o%20do%20item%20identificado%20pelo%20C%C3%B3digo%22&excerpt_size=3000&number_of_excerpts=10000&pre_tags=&post_tags=&size=10000&sort_by=ascending_date'
     response = requests.get(url)
 
     # Verificando se a solicitação foi bem-sucedida
