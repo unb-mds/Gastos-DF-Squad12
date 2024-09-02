@@ -5,12 +5,12 @@ from collections import defaultdict
 import os
 from datetime import datetime, timedelta
 
-# arruma o diretorio
+# Set the correct paths
 script_dir = os.path.dirname(os.path.abspath(__file__))
 json_file_path = os.path.join(os.path.dirname(os.path.dirname(script_dir)), 'resultados_convenio.json')
 
 def process_gazettes():
-    # pega a data de ontem
+    # Get yesterday's date
     yesterday = datetime.now() - timedelta(days=1)
     yesterday_str = yesterday.strftime("%Y-%m-%d")
 
@@ -26,7 +26,7 @@ def process_gazettes():
     dados = response.json()
     gazettes = dados.get('gazettes', [])
 
-    # carrega os dados existentes e cria um dicionario
+    # Load existing data or create an empty dictionary
     if os.path.exists(json_file_path):
         with open(json_file_path, 'r', encoding='utf-8') as f:
             existing_data = json.load(f)
@@ -94,8 +94,15 @@ def process_gazettes():
         if "total_diario" in info and info["total_diario"] > 0
     ]
 
-    # juntar os resultados
+    if not new_results:
+        print("Nenhum novo dado foi encontrado para adicionar.")
+        return
+
+    # Merge new results with existing data
     existing_data["resultados"].extend(new_results)
+
+    # Remover duplicados, se necessário (opcional)
+    existing_data["resultados"] = list({v['date']: v for v in existing_data["resultados"]}.values())
 
     # Salvando o resultado atualizado em um arquivo JSON
     with open(json_file_path, 'w', encoding='utf-8') as f:
