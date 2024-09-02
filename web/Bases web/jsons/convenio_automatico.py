@@ -15,7 +15,7 @@ def process_gazettes():
     yesterday_str = yesterday.strftime("%Y-%m-%d")
 
     # Fazendo a solicitação GET para a API
-    url = f'https://queridodiario.ok.org.br/api/gazettes?territory_ids=5300108&published_since={yesterday_str}&published_until={yesterday_str}&querystring=%22RECONHECIMENTO%20DE%20D%C3%8DVIDA%22&excerpt_size=500&number_of_excerpts=100000&pre_tags=&post_tags=&size=10000&sort_by=descending_date'
+    url = f'https://queridodiario.ok.org.br/api/gazettes?territory_ids=5300108&published_since=2024-08-20&published_until={yesterday_str}&querystring=%22RECONHECIMENTO%20DE%20D%C3%8DVIDA%22&excerpt_size=500&number_of_excerpts=100000&pre_tags=&post_tags=&size=10000&sort_by=descending_date'
     response = requests.get(url)
 
     if response.status_code != 200:
