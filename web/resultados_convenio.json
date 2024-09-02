@@ -9063,6 +9063,90 @@
                     "valor": 259.74
                 }
             ]
+        },
+        {
+            "date": "2024-08-28",
+            "total_gasto_dia": 691181.2499999999,
+            "decretos": [
+                {
+                    "interessado": "NÚCLEO DE DIAGNOSE E MICROCIRURGIA OCULAR DE BRASÍLIA LTDA",
+                    "valor": 20960.74
+                },
+                {
+                    "interessado": "CETTRO CENTRO DE TRATAMENTO ONCOLOGICO LTDA",
+                    "valor": 95.35
+                },
+                {
+                    "interessado": "LABORATÓRIO CITOPREV DE ANATOMIA PATOLÓGICA E CITOPATOLOGIA LTDA",
+                    "valor": 432.25
+                },
+                {
+                    "interessado": "CENTRO DE MEDICINA NUCLEAR DE BRASILIA LTDA",
+                    "valor": 20479.27
+                },
+                {
+                    "interessado": "NEPHRON BRASÍLIA SERVIÇOS MÉDICOS LTDA",
+                    "valor": 403106.26
+                },
+                {
+                    "interessado": "GASTROCLASS GASTROENTEROLOGIA E ENDOSCOPIA DIGESTIVA LTDA",
+                    "valor": 450.0
+                },
+                {
+                    "interessado": "ÍMPAR SERVIÇOS HOSPITALARES S/A",
+                    "valor": 222684.8
+                },
+                {
+                    "interessado": "LAPAC LABORATÓRIO DE PATOLOGIA E CLÍNICAS LTDA",
+                    "valor": 213.58
+                },
+                {
+                    "interessado": "IRB INSTITUTO DE RADIOISÓTOPOS DE BRASÍLIA LTDA",
+                    "valor": 22759.0
+                }
+            ]
+        },
+        {
+            "date": "2024-08-27",
+            "total_gasto_dia": 50322.92,
+            "decretos": [
+                {
+                    "interessado": "P & B Sistemas de Segurança Eireli",
+                    "valor": 6000.65
+                },
+                {
+                    "interessado": "RBT EVENTOS LTDA ME",
+                    "valor": 4528.79
+                },
+                {
+                    "interessado": "EVOLUÇÃO ENGENHARIA",
+                    "valor": 39793.48
+                }
+            ]
+        },
+        {
+            "date": "2024-08-26",
+            "total_gasto_dia": 131839.59,
+            "decretos": [
+                {
+                    "interessado": "COOPERATIVA DOS MEDICOS ANESTESIOLOGISTAS DO DISTRITO FEDERAL",
+                    "valor": 127742.54
+                },
+                {
+                    "interessado": "VISOMED INTEGRATIVE LTDA",
+                    "valor": 4097.05
+                }
+            ]
+        },
+        {
+            "date": "2024-08-21",
+            "total_gasto_dia": 18008.41,
+            "decretos": [
+                {
+                    "interessado": "HOSPITAL ANCHIETA S",
+                    "valor": 18008.41
+                }
+            ]
         }
     ]
 }
