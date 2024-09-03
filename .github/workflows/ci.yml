@@ -46,13 +46,16 @@ jobs:
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
 
-      - name: Deploy changes
+      - name: Fetch and Checkout Branch
         run: |
           git fetch origin
-          git checkout -b projeto_deploy || git checkout projeto_deploy
-          git pull origin projeto_deploy
+          git checkout projeto_deploy || echo "Branch projeto_deploy does not exist locally; creating it."
+          git pull origin projeto_deploy || echo "Failed to pull from projeto_deploy."
+
+      - name: Commit and Push Changes
+        run: |
           git add .
           git commit -m "Deploy changes to projeto_deploy branch" || echo "No changes to commit"
-          git push origin projeto_deploy
+          git push origin projeto_deploy || echo "Failed to push changes to projeto_deploy."
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
