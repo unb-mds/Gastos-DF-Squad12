@@ -12,7 +12,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -27,7 +28,17 @@ jobs:
       - name: Run HTTP server and verify
         run: |
           python -m http.server 8000 &
-          sleep 5
+          # Give the server time to start
+          for i in {1..10}; do
+            if curl -s http://localhost:8000/index.html > /dev/null; then
+              echo "Server is up and running."
+              break
+            else
+              echo "Waiting for server to start..."
+              sleep 1
+            fi
+          done
+          # Fetch the page
           curl -I http://localhost:8000/index.html
 
       - name: Set up Git for deployment
@@ -39,7 +50,7 @@ jobs:
         run: |
           git checkout -b projeto_deploy || git checkout projeto_deploy
           git add .
-          git commit -m "Deploy changes to projeto_deploy branch"
+          git commit -m "Deploy changes to projeto_deploy branch" || echo "No changes to commit"
           git push origin projeto_deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
