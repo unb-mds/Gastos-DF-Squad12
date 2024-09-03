@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreador de Créditos Suplementares</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .chart-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            height: 400px;
+        }
+        .btn {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            width: 200px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .summary {
+            background-color: #e8f4fd;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 5px 5px 0;
+        }
+        .history-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            display: none;
+        }
+        .history-row {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .history-row:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .history-row td {
+            padding: 15px;
+        }
+        .decree-details {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 15px;
+        }
+        .decree-details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .decree-details li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rastreador de Créditos Suplementares</h1>
+    </header>
+    <div class="container">
+        <div class="chart-container">
+            <canvas id="decretosChart"></canvas>
+        </div>
+        <button id="toggleHistory" class="btn">Mostrar Histórico</button>
+        <div class="summary">
+            <h3>O que é Crédito Suplementar?</h3>
+            <p>Crédito suplementar é um tipo de crédito adicional destinado a reforçar uma dotação orçamentária já existente. É utilizado quando os créditos orçamentários são insuficientes para atender às despesas do exercício. Essa ferramenta permite ajustes no orçamento para garantir a continuidade de serviços essenciais e a realização de investimentos públicos não previstos ou insuficientemente dotados na Lei Orçamentária Anual.</p>
+        </div>
+        <table id="historyTable" class="history-table">
+            <tbody id="historyBody"></tbody>
+        </table>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const jsonFilePath = 'resultados_credito.json';
+
+        fetch(jsonFilePath)
+            .then(response => response.json())
+            .then(data => {
+                const resultados = data.resultados;
+
+                const monthlyData = {};
+                resultados.forEach(res => {
+                    const month = res.date.substring(0, 7);
+                    if (!monthlyData[month]) {
+                        monthlyData[month] = 0;
+                    }
+                    monthlyData[month] += res.decretos.length;
+                });
+
+                const labels = Object.keys(monthlyData).reverse();
+                const decreesCounts = Object.values(monthlyData).reverse();
+
+                const ctx = document.getElementById('decretosChart').getContext('2d');
+                const decretosChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Número de Decretos',
+                            data: decreesCounts,
+                            backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1,
+                            borderRadius: 8,
+                            barThickness: 30
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Mês/Ano',
+                                    font: {
+                                        size: 14,
+                                        weight: 'bold'
+                                    }
+                                },
+                                grid: {
+                                    display: false
+                                },
+                                ticks: {
+                                    font: {
+                                        size: 12
+                                    },
+                                    maxRotation: 45,
+                                    minRotation: 45
+                                }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Número de Decretos',
+                                    font: {
+                                        size: 14,
+                                        weight: 'bold'
+                                    }
+                                },
+                                grid: {
+                                    color: 'rgba(200, 200, 200, 0.3)'
+                                },
+                                ticks: {
+                                    font: {
+                                        size: 12
+                                    },
+                                    callback: function(value) {
+                                        return value.toLocaleString('pt-BR');
+                                    }
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'top',
+                                labels: {
+                                    font: {
+                                        size: 14
+                                    }
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return `Decretos: ${context.parsed.y.toLocaleString('pt-BR')}`;
+                                    }
+                                }
+                            }
+                        },
+                        animation: {
+                            duration: 1500,
+                            easing: 'easeOutQuart'
+                        }
+                    }
+                });
+                
+                // Tabela de histórico
+                const toggleHistoryButton = document.getElementById('toggleHistory');
+                const historyTable = document.getElementById('historyTable');
+                const historyBody = document.getElementById('historyBody');
+
+                toggleHistoryButton.addEventListener('click', () => {
+                    historyTable.style.display = historyTable.style.display === 'none' ? 'table' : 'none';
+                    toggleHistoryButton.textContent = historyTable.style.display === 'none' ? 'Mostrar Histórico' : 'Ocultar Histórico';
+                });
+
+                // Preenchendo a tabela de histórico
+                resultados.reverse().forEach(res => {
+                    const row = document.createElement('tr');
+                    row.classList.add('history-row');
+                    row.innerHTML = `
+                        <td>${res.date}</td>
+                        <td>${res.decretos.length} decreto(s)</td>
+                        <td>R$ ${res.total_gasto_dia.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</td>
+                    `;
+                    
+                    const detailRow = document.createElement('tr');
+                    detailRow.innerHTML = `
+                        <td colspan="3" class="decree-details">
+                            <ul>
+                                ${res.decretos.map(dec => `
+                                    <li>
+                                        Decreto: ${dec.decreto} - Valor: R$ ${dec.valor.toLocaleString('pt-BR', {minimumFractionDigits: 2})}
+                                    </li>`).join('')}
+                                <li><a href="${res.url}" target="_blank">Link para o PDF</a></li>
+                            </ul>
+                        </td>
+                    `;
+
+                    row.addEventListener('click', () => {
+                        const details = detailRow.querySelector('.decree-details');
+                        details.style.display = details.style.display === 'none' ? 'block' : 'none';
+                    });
+
+                    historyBody.appendChild(row);
+                    historyBody.appendChild(detailRow);
+                });
+            })
+            .catch(error => console.error('Erro ao carregar o JSON:', error));
+    });
+    </script>
+</body>
+</html>
