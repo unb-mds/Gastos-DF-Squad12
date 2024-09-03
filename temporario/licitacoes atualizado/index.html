@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Licitações</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/2.29.3/date-fns.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        #chart-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        #cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .pagination button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        #search-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        #search-input {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        #search-button {
+            padding: 10px 15px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dashboard de Licitações</h1>
+    <div id="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div id="search-container">
+        <input type="date" id="search-input" placeholder="Pesquisar por data">
+        <button id="search-button">Pesquisar</button>
+    </div>
+    <div id="cards-container"></div>
+    <div class="pagination">
+        <button id="prev-page">Anterior</button>
+        <button id="next-page">Próxima</button>
+    </div>
+
+    <script>
+        let licitacoes = [];
+        let currentPage = 1;
+        const itemsPerPage = 20;
+
+        async function fetchData() {
+            try {
+                const response = await fetch('dados_licitacoes.json');
+                licitacoes = await response.json();
+                licitacoes.sort((a, b) => new Date(b.data_publicacao) - new Date(a.data_publicacao));
+                createChart();
+                updateCards();
+            } catch (error) {
+                console.error('Erro ao carregar os dados:', error);
+            }
+        }
+
+        function createChart() {
+            const monthCounts = {};
+            licitacoes.forEach(licitacao => {
+                const month = new Date(licitacao.data_publicacao).toLocaleString('default', { month: 'long' });
+                monthCounts[month] = (monthCounts[month] || 0) + 1;
+            });
+
+            const ctx = document.getElementById('myChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(monthCounts),
+                    datasets: [{
+                        label: 'Número de Licitações por Mês',
+                        data: Object.values(monthCounts),
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Número de Licitações'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Mês'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateCards() {
+            const container = document.getElementById('cards-container');
+            container.innerHTML = '';
+
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const pageItems = licitacoes.slice(startIndex, endIndex);
+
+            pageItems.forEach(licitacao => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h3>Licitação ${licitacao.identificador}</h3>
+                    <p><strong>Data:</strong> ${new Date(licitacao.data_publicacao).toLocaleDateString()}</p>
+                    <p><strong>Modalidade:</strong> ${licitacao.nome_modalidade}</p>
+                    <p><strong>Objeto:</strong> ${licitacao.objeto.slice(0, 100)}...</p>
+                    <p><strong>Valor Homologado:</strong> R$ ${licitacao.valor_homologado_total?.toFixed(2) || 'N/A'}</p>
+                `;
+                container.appendChild(card);
+            });
+
+            updatePaginationButtons();
+        }
+
+        function updatePaginationButtons() {
+            const prevButton = document.getElementById('prev-page');
+            const nextButton = document.getElementById('next-page');
+
+            prevButton.disabled = currentPage === 1;
+            nextButton.disabled = currentPage === Math.ceil(licitacoes.length / itemsPerPage);
+        }
+
+        document.getElementById('prev-page').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                updateCards();
+            }
+        });
+
+        document.getElementById('next-page').addEventListener('click', () => {
+            if (currentPage < Math.ceil(licitacoes.length / itemsPerPage)) {
+                currentPage++;
+                updateCards();
+            }
+        });
+
+        document.getElementById('search-button').addEventListener('click', () => {
+            const searchDate = document.getElementById('search-input').value;
+            if (searchDate) {
+                const filteredLicitacoes = licitacoes.filter(licitacao => 
+                    licitacao.data_publicacao.startsWith(searchDate)
+                );
+                licitacoes = filteredLicitacoes;
+                currentPage = 1;
+                updateCards();
+                createChart();
+            } else {
+                fetchData();
+            }
+        });
+
+        fetchData();
+    </script>
+</body>
+</html>
