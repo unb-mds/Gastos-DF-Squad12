@@ -1,4 +1,4 @@
-name: Update Escolas Data
+name: Update Json Data
 
 on:
   schedule:
