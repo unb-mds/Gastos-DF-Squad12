@@ -1,1 +1,1 @@
-Algoritimos usados para gerar os arquivos json usados no projeto
+Algoritimos usados para atualizar os arquivos json usados no projeto
