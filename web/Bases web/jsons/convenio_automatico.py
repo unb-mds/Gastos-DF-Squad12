@@ -5,17 +5,16 @@ from collections import defaultdict
 import os
 from datetime import datetime, timedelta
 
-# arruma o diretorio
 script_dir = os.path.dirname(os.path.abspath(__file__))
 json_file_path = os.path.join(os.path.dirname(os.path.dirname(script_dir)), 'resultados_convenio.json')
 
 def process_gazettes():
-    # pega a data de ontem
+    # pega a data do dia anterior
     yesterday = datetime.now() - timedelta(days=1)
     yesterday_str = yesterday.strftime("%Y-%m-%d")
 
     # Fazendo a solicitação GET para a API
-    url = f'https://queridodiario.ok.org.br/api/gazettes?territory_ids=5300108&published_since=2024-08-20&published_until={yesterday_str}&querystring=%22RECONHECIMENTO%20DE%20D%C3%8DVIDA%22&excerpt_size=500&number_of_excerpts=100000&pre_tags=&post_tags=&size=10000&sort_by=descending_date'
+    url = f'https://queridodiario.ok.org.br/api/gazettes?territory_ids=5300108&published_since={yesterday_str}&published_until={yesterday_str}&querystring=%22RECONHECIMENTO%20DE%20D%C3%8DVIDA%22&excerpt_size=500&number_of_excerpts=100000&pre_tags=&post_tags=&size=10000&sort_by=ascending_date'
     response = requests.get(url)
 
     if response.status_code != 200:
@@ -26,7 +25,7 @@ def process_gazettes():
     dados = response.json()
     gazettes = dados.get('gazettes', [])
 
-    # carrega os dados existentes e cria um dicionario
+    # carrega os dados ou cria uma tabela nova
     if os.path.exists(json_file_path):
         with open(json_file_path, 'r', encoding='utf-8') as f:
             existing_data = json.load(f)
@@ -94,8 +93,15 @@ def process_gazettes():
         if "total_diario" in info and info["total_diario"] > 0
     ]
 
-    # juntar os resultados
+    if not new_results:
+        print("Nenhum novo dado foi encontrado para adicionar.")
+        return
+
+    # Merge new results with existing data
     existing_data["resultados"].extend(new_results)
+
+    # Remover duplicados, se necessário (opcional)
+    existing_data["resultados"] = list({v['date']: v for v in existing_data["resultados"]}.values())
 
     # Salvando o resultado atualizado em um arquivo JSON
     with open(json_file_path, 'w', encoding='utf-8') as f:

@@ -3,19 +3,20 @@ import json
 from datetime import datetime, timedelta
 import os
 
+# Define o diretório de trabalho como o diretório atual do script
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 # URL base da API
 base_url = "https://dadosabertos.compras.gov.br/modulo-legado/1_consultarLicitacao"
 
-# data de hoje e um mes atras
-end_date = datetime.now().strftime("%Y-%m-%d")
-start_date = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
+# Data do dia anterior
+yesterday = datetime.now() - timedelta(days=1)
+yesterday_str = yesterday.strftime("%Y-%m-%d")
 
 params = {
-    "tamanhoPagina": 500,
-    "data_publicacao_inicial": start_date,
-    "data_publicacao_final": end_date
+    "tamanhoPagina": 10,
+    "data_publicacao_inicial": yesterday_str,  # Altere conforme necessário
+    "data_publicacao_final": yesterday_str
 }
 
 # Inicializa a variável para armazenar todos os dados
@@ -33,13 +34,10 @@ while True:
     response.encoding = 'utf-8'  # Garante que a resposta esteja codificada em UTF-8
     dados = response.json()
 
-    # Verifica se há resultados
-    if not dados.get("resultado"):
-        print(f"Nenhum resultado encontrado na página {pagina_atual}")
-        break
-
-    # Adiciona os resultados à lista principal
-    todos_os_dados.extend(dados["resultado"])
+    # Filtra e adiciona os resultados à lista principal
+    for item in dados["resultado"]:
+        if item["codigo_municipio_uasg"] == 97012:
+            todos_os_dados.append(item)
 
     # Mostra em qual página o programa está
     print(f"Coletando dados da página {pagina_atual} de {dados['totalPaginas']}")
@@ -52,7 +50,7 @@ while True:
     pagina_atual += 1
 
 # Caminho para o arquivo JSON
-json_path = "../../dados_licitacoes.json"
+json_path = os.path.abspath("../../dados_licitacoes.json")
 
 # Carrega os dados existentes, se houver
 try:
@@ -64,11 +62,8 @@ except FileNotFoundError:
 # Adiciona os novos dados aos existentes
 dados_existentes.extend(todos_os_dados)
 
-# Remove duplicatas baseadas no ID da licitação (se existir)
-if dados_existentes and 'id' in dados_existentes[0]:
-    dados_unicos = {item['id']: item for item in dados_existentes}.values()
-else:
-    dados_unicos = dados_existentes
+# Remove duplicatas baseadas no ID da compra
+dados_unicos = {item['id_compra']: item for item in dados_existentes}.values()
 
 # Salva todos os dados coletados em um arquivo JSON
 with open(json_path, "w", encoding='utf-8') as arquivo_json:

@@ -5,17 +5,17 @@ from collections import defaultdict
 import os
 from datetime import datetime, timedelta
 
-# seta os diretorios
+# caminhos corretos do arquivo
 script_dir = os.path.dirname(os.path.abspath(__file__))
 json_file_path = os.path.join(os.path.dirname(os.path.dirname(script_dir)), 'resultados_credito.json')
 
 def process_gazettes():
-    # pega a data de ontem
+    # data de ontem em str
     yesterday = datetime.now() - timedelta(days=1)
     yesterday_str = yesterday.strftime("%Y-%m-%d")
 
     # Fazendo a solicitação GET para a API
-    url = f'https://queridodiario.ok.org.br/api/gazettes?territory_ids=5300108&published_since={yesterday_str}&published_until={yesterday_str}&querystring=%22Abre%20cr%C3%A9dito%20suplementar%22&excerpt_size=120&number_of_excerpts=100000&pre_tags=&post_tags=&size=10000&sort_by=descending_date'
+    url = f'https://queridodiario.ok.org.br/api/gazettes?territory_ids=5300108&published_since={yesterday_str}&published_until={yesterday_str}&querystring=%22Abre%20cr%C3%A9dito%20suplementar%22&excerpt_size=120&number_of_excerpts=100000&pre_tags=&post_tags=&size=10000&sort_by=ascending_date'
     response = requests.get(url)
 
     if response.status_code != 200:
@@ -26,7 +26,7 @@ def process_gazettes():
     dados = response.json()
     gazettes = dados.get('gazettes', [])
 
-    # carrega os dados existentes ou cria um novo
+    # Load existing data or create an empty dictionary
     if os.path.exists(json_file_path):
         with open(json_file_path, 'r', encoding='utf-8') as f:
             existing_data = json.load(f)
@@ -85,7 +85,7 @@ def process_gazettes():
         for data, info in resultados.items()
     ]
 
-    # Junta resultado com os existentes
+    # Merge new results with existing data
     existing_data["resultados"].extend(new_results)
 
     # Salvando o resultado atualizado em um arquivo JSON
