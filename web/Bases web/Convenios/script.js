@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return `R$ ${value.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
     }
 
+    function sortDataByDate(entries) {
+        return entries.sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
+
     function renderTable(data) {
         tableBody.innerHTML = "";
         data.forEach(entry => {
@@ -91,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(response => response.json())
             .then(json => {
                 data = json.resultados;
-                filteredData = data; // Initialize filtered data
+                filteredData = sortDataByDate(data); // Ordenar dados antes de renderizar
                 renderTable(filteredData);
                 updateChart();
             });
@@ -104,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 decreto.interessado.toLowerCase().includes(query)
             )
         );
+        filteredData = sortDataByDate(filteredData); // Ordenar dados filtrados
         renderTable(filteredData);
         updateChart();
     }
