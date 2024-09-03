@@ -48,7 +48,9 @@ jobs:
 
       - name: Deploy changes
         run: |
+          git fetch origin
           git checkout -b projeto_deploy || git checkout projeto_deploy
+          git pull origin projeto_deploy
           git add .
           git commit -m "Deploy changes to projeto_deploy branch" || echo "No changes to commit"
           git push origin projeto_deploy
