@@ -1,8 +1,8 @@
-name: ci
+name: CI
 
 on:
   push:
-    branches: 
+    branches:
       - main
   pull_request:
     branches:
@@ -14,32 +14,32 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: run
-      run: |
-        python -m http.server 8000 &
-        sleep 5
-        curl -I http://localhost:8000/index.html
+      - name: Run HTTP server and verify
+        run: |
+          python -m http.server 8000 &
+          sleep 5
+          curl -I http://localhost:8000/index.html
 
-    - name: Set up Git for deployment
-      run: |
-        git config --global user.name 'GitHub Actions'
-        git config --global user.email 'actions@github.com'
+      - name: Set up Git for deployment
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
 
-    - name: deploy
-      run: |
-        git checkout -b projeto_deploy || git checkout projeto_deploy
-        git add .
-        git commit -m "Deploy changes to projeto_deploy branch"
-        git push origin projeto_deploy
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy changes
+        run: |
+          git checkout -b projeto_deploy || git checkout projeto_deploy
+          git add .
+          git commit -m "Deploy changes to projeto_deploy branch"
+          git push origin projeto_deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
