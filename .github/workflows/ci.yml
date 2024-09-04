@@ -25,7 +25,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run HTTP server and verify
+      - name: Run Python unit Tests
+        run: |
+          echo "Running tests..."
+          python web/Bases\ web/jsons/_test_compras_automatico.py
+          python web/Bases\ web/jsons/_test_convenio_automatico.py
+          python web/Bases\ web/jsons/_test_credito_automatico.py
+          python web/Bases\ web/jsons/_test_licitacoes_automatico.py
+          python web/Bases\ web/jsons/_test_verbas_automatico.py
+        # The workflow will fail automatically if any test fails
+        # Any output from test failures will be visible in the logs
+
+      - name: Build and Run HTTP server and verify
         run: |
           python -m http.server 8000 &
           # Give the server time to start
