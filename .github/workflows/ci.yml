@@ -60,7 +60,7 @@ jobs:
       - name: Fetch and Checkout Branch
         run: |
           git fetch origin
-          git checkout projeto_deploy || echo "Branch projeto_deploy does not exist locally; creating it."
+          git checkout projeto_deploy || git checkout -b projeto_deploy
           git pull origin projeto_deploy || echo "Failed to pull from projeto_deploy."
 
       - name: Commit and Push Changes
