@@ -14,23 +14,15 @@ Link para a página do <a href="https://unb-mds.github.io/Gastos-DF-Squad12/web/
 
 ## 🔎 Localização dos ambientes 
 
-O Front-end está localizado na branch `main` na pasta `web`.
+O Front-end está localizado na pasta `web`.
 
-A API está localizada na branch `main` na pasta `api`.
-
-O Back-end está localizado na branch `main` na pasta `Back`.
+O Back-end está localizada na pasta `Bases web` dentro da pasta `web`.
 
 A Documentação esta localizada no repositório <a href="https://github.com/unb-mds/2024-1-Gastos-DF-Doc-Squad12">documentação</a>.
 
-## 🚀 Execução do ambiente
+## 🚀 Execução do projeto
 
-Cada ambiente tem um `readme.md` contendo instruções de como executar os seus respectivos ambientes.
-
-Como rodar o Front: https://unb-mds.github.io/2024-1-Gastos-DF-Doc-Squad12/frontend/#como-rodar-o-front-end
-
-Como rodar a API: https://unb-mds.github.io/2024-1-Gastos-DF-Doc-Squad12/api/#como-rodar-o-ambiente-da-api
-
-Como rodar o Back: https://unb-mds.github.io/2024-1-Gastos-DF-Doc-Squad12/backend/#como-rodar-o-back-end
+Como rodar o projeto localmente: https://unb-mds.github.io/2024-1-Gastos-DF-Doc-Squad12/frontend/#como-rodar-o-projeto
 
 ## 📚 Documentação
 
