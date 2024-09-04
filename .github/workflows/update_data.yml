@@ -35,7 +35,7 @@ jobs:
         git config --global user.email "github-actions@example.com"
         git config --global user.name "GitHub Actions"
         git add web/resultados_convenio.json
-        git add web/resultado_compras.json
+        git add web/resultados_compras.json
         git add web/resultados_escola.json
         git add web/resultados_credito.json
         git add web/dados_licitacoes.json
